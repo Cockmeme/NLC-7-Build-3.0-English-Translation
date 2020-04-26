@@ -262,7 +262,7 @@ ui_st_others.xml                      Finished
 ui_st_pda.xml                         Awaiting revision
 
 
-*SCRIPTS*
+***SCRIPTS***
 
 allcore\allcore_hide.script
 
