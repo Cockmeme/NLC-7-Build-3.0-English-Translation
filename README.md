@@ -1,7 +1,7 @@
 # NLC-7-Build-3.0-English-Translation
 An english translation of NLC 7 Build 3.0. This repository will be periodically updated to include files, which have been fully translated.
 
-
+Credits: Kazemeka, ъеъ, Unrealrus, Redshift, Osteos, Terry Tuna, Comrade Cat, Sasha Red
 
 
  File list                           Status
@@ -262,3 +262,5 @@ ui_st_other.xml                       Awaiting revision
 ui_st_others.xml                      Finished
 
 ui_st_pda.xml                         Awaiting revision
+
+
