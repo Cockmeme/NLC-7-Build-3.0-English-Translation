@@ -1,0 +1,156 @@
+;Vergas  © NLC 7 ============================
+
+#include "text\rus\string_table_pda_stalker.xml"
+#include "text\rus\string_table_pda_military.xml"
+#include "text\rus\string_table_pda_bandit.xml"
+#include "text\rus\string_table_pda_dolg.xml"
+#include "text\rus\string_table_pda_freedom.xml"
+#include "text\rus\string_table_pda_monolith.xml"
+#include "text\rus\string_table_pda_killer.xml"
+#include "text\rus\string_table_pda_ecolog.xml"
+#include "text\rus\string_table_pda_green.xml"
+#include "text\rus\string_table_pda_treasure.xml"
+
+<string id="razgruzka"><text>A carrier vest designed to provide limited protection, and hold ammunition and emergency medical supplies.</text></string>
+<string id="podsumok"><text>Carrying pouch on the belt for various items</text></string>
+<string id="timer"><text>Electronic wristwatch.  Designed specifically for special forces. Shockproof, waterproof, and can withstand immersion up to 300 meters. Includes a timer and a stopwatch.</text></string>
+<string id="klava_name"><text>Electronic notebook</text></string>
+<string id="klava"><text>A converted old smartphone turned an electronic notebook by a repairman called Vergas.</text></string>
+<string id="st_sleeping_bag"><text>Sleeping bag</text></string>
+<string id="st_sleeping_bag_descr"><text>A light sleeping bag. Waterproof. The model combines comfort with high thermal insulating properties.</text></string>
+<string id="st_notebook_of_artist"><text>Artist's notebook</text></string>
+<string id="st_notebook_of_artist_descr"><text>Notebook of a dead artist with drawings and travel notes.</text></string>
+<string id="flask_army"><text>Army flask</text></string>
+<string id="flask_army_descr"><text>Flask with a screw-on cap attatched to a chain. Made of food-grade aluminium. Equipped with a carrying pouch. Designed for convenient carrying of liquid.</text></string>
+<string id="st_backpack"><text>Backpack</text></string>
+<string id="st_backpack_descr"><text>A spacious backpack. Waterproof. Thanks to the wide front opening with an attatched zipper, it is possible to access and pack things not only from the top, but also from the front.</text></string>
+<string id="self-made_decoder"><text>Decoder</text></string>
+<string id="self-made_decoder_descr"><text>Homemade device for hacking an electronic door lock system and deciphering the correct set of characters for the code.</text></string>
+<string id="bag_on_belt"><text>Bag on belt</text></string>
+<string id="bag_on_belt_descr"><text>A handy bag for storing small amounts of small items. Usually used by Stalkers as a storage for bolts.</text></string>
+<string id="krujka_1"><text>A glass cup holder</text></string>
+<string id="krujka_1_descr"><text>A glass cup holder found in the sanatorium. Clearly old-fashioned.</text></string>
+<string id="krujka"><text>Mug</text></string>
+<string id="krujka_descr"><text>A mug found in the sanatorium.</text></string>
+<string id="chashka"><text>Cup</text></string>
+<string id="chashka_descr"><text>A cup found in the sanatorium.</text></string>
+<string id="graal"><text>Grail</text></string>
+<string id="graal_descr"><text>A Grail found in the sanatorium. Looks like it's seen quite a bit of use...</text></string>
+<string id="anomaly_krujka"><text>Kettlebell with a embedded mug</text></string>
+<string id="anomaly_krujka_descr"><text>A kettlebell found in the sanatorium. Weighs 1 pound. But how did the mug get stuck inside it? Mysteries of the fucking zone!</text></string>
+<string id="pivnaya_krujka"><text>Beer mug</text></string>
+<string id="pivnaya_krujka_descr"><text>A beer mug found in the sanatorium. It has obviously spent some time in an anomaly.</text></string>
+<string id="skiing"><text>Skis</text></string>
+<string id="skiing_descr"><text>Old wooden skis with soft boots, fashioned from bamboo sticks. They don't seem to slide anymore...</text></string>
+
+<string id="dialog_krujka_GG_0"><text>Oh, yeah, I found some kind of mug. Searched the entire Sanatorium...</text></string>
+<string id="dialog_krujka_V_1"><text>Well, look at that... Cool! Show it to me.</text></string>
+<string id="dialog_krujka_GG_2"><text>Take it. I'm tired of carrying it.</text></string>
+<string id="dialog_krujka_V_3"><text>Looks like you aren't such a lazy person Marked one! Having to drag such heavy things around. The mug isn't mine and I have never seen such a Kettlebell.</text></string>
+<string id="dialog_krujka_V_4"><text>Thank you Marked One, for your trouble, but no offense. Those aren't my things..</text></string>
+<string id="dialog_krujka_V_5"><text>It's a wonderful object, but it's not mine. Keep it and use it yourself.</text></string>
+<string id="dialog_krujka_V_6"><text>I'm sorry, but that's not it. Maybe next time you'll have better luck...</text></string>
+<string id="dialog_krujka_V_7"><text>I don't know what this is..</text></string>
+<string id="dialog_krujka_V_8"><text>A grail of some kind. You didn't find it in a church? Maybe you need to get your head checked. \nWell, it's obviously not mine.</text></string>
+<string id="dialog_krujka_GG_10"><text>Well, look at that. There must have been a great earthquake at the sanatorium, to have this mug stuck in a kettlebell.</text></string>
+<string id="dialog_krujka_GG_11"><text>Here you go, a cup. Obviously, it's been in an anomaly. It's almost invisible...</text></string>
+<string id="dialog_krujka_GG_12"><text>It's not a cup, if you look closely it's actually a glass cup holder.</text></string>
+<string id="dialog_krujka_GG_13"><text>A pretty standard mug. It's obviously made for drinking tea.</text></string>
+<string id="dialog_krujka_GG_14"><text>Here it is, a cup. Careful, it's made out of porcelain.</text></string>
+<string id="dialog_krujka_GG_15"><text>Not exactly a normal cup, it's obviously made for drinking tea.</text></string>
+
+<string id="dialog_krujka_V_100"><text>Oh! It's mine! Come here, we'll cut it out of the Kettlebell. \nThanks for not selling to anyone.</text></string>
+<string id="dialog_krujka_V_101"><text>Oh, my love! It's spacious, just like a tea kettle.\nThank you for not selling it to anyone.</text></string>
+<string id="dialog_krujka_V_102"><text>My precious little glass! I remember I stole it from a train... accidentally, I swear.\nThank you for not selling it to anyone.</text></string>
+<string id="dialog_krujka_V_103"><text>Oh, my dear. Well, Marked One, you've made my day! \nThank you for not selling it to anyone.</text></string>
+<string id="dialog_krujka_V_104"><text>A collector's piece. That's exactly what I had tea with at the sanatorium. \nThanks for not selling it to anyone.</text></string>
+<string id="dialog_krujka_V_105"><text>Here it is, the Emperor's Cup!\nThanks for not selling it to anyone.</text></string>
+
+<string id="dialog_krujka_GG_108"><text>So take it and use it!</text></string>
+<string id="dialog_krujka_GG_109"><text>I'll give it to you, Vergas, I'll give it to you in a little while...</text></string>
+<string id="dialog_krujka_GG_126"><text>Got it.</text></string>
+
+<string id="dialog_krujka_V_150"><text>Thank you, Marked One. This is the last memory of my old home. I had it, didn't I? \nTake it, It's for you. I was saving it for my old age, but I'd rather give it to you.</text></string>
+										
+<string id="dialog_krujka_GG_202"><text>Oh... Why the fuck would I need skis? It's spring outside.</text></string>
+<string id="dialog_krujka_GG_203"><text>No, I don't need a gun like that. Keep it.</text></string>
+<string id="dialog_krujka_GG_204"><text>You don't need a sleeping bag. It's just dead weight.</text></string>
+<string id="dialog_krujka_GG_205"><text>Thank you, I already have one. I don't need a second pair of binoculars.</text></string>
+<string id="dialog_krujka_GG_206"><text>A battery is a very useful thing to have, but I have nowhere to put it. Sorry.</text></string>
+<string id="dialog_krujka_GG_207"><text>I don't need that belt.</text></string>
+<string id="dialog_krujka_GG_208"><text>I'd take the container, but it's too heavy. Keep it.</text></string>
+<string id="dialog_krujka_GG_209"><text>This watch is too complicated for me. I'd rather have something simpler.</text></string>
+<string id="dialog_krujka_GG_210"><text>I don't use this ammo. Keep it.</text></string>
+<string id="dialog_krujka_GG_211"><text>Keep the repair kits. You need them more than I do.</text></string>
+<string id="dialog_krujka_GG_212"><text>I don't need batteries. I won't take them.</text></string>
+<string id="dialog_krujka_GG_213"><text>These first-aid kits are a little weak. Would you be able to spare some army or scientific kits?</text></string>
+<string id="dialog_krujka_GG_214"><text>There's no need for matches right now. A lighter would be a lot better.</text></string>
+<string id="dialog_krujka_GG_215"><text>Nice bulletproof vest, but mine's better. I won't take it.</text></string>
+<string id="dialog_krujka_GG_216"><text>I don't need that. I get heartburn from the MREs.</text></string>
+<string id="dialog_krujka_GG_217"><text>Vodka's a good thing, but I don't need any right now.</text></string>
+<string id="dialog_krujka_GG_218"><text>These grenades are a little weak. Don't you have any anti-tank grenades?</text></string>
+<string id="dialog_krujka_GG_219"><text>I don't need any anti-radiation drugs. I'd rather be treated with vodka.</text></string>
+<string id="dialog_krujka_GG_220"><text>I don't need "Cat Eye" tablets. Rumors say they make you shit your guts out.</text></string>
+<string id="dialog_krujka_GG_221"><text>How can people drink that? I can't even make myself put it in my mouth. I'd much rather have some vodka.</text></string>
+<string id="dialog_krujka_GG_222"><text>These bandages are so terrible, I might as well be using with a piece of my clothes instead. I'd like to have something more substantial.</text></string>
+<string id="dialog_krujka_GG_223"><text>More canned food huh... No, sorry...</text></string>
+<string id="dialog_krujka_GG_224"><text>"Hunter" Sausage? I Don't need it.</text></string>
+<string id="dialog_krujka_GG_225"><text>The best sausage is a sock stuffed with money. Would you happen to exchange regular sausages for those?</text></string>
+<string id="dialog_krujka_GG_226"><text>This bread will rot before I even get a chance to eat it.</text></string>
+
+<string id="dialog_krujka_V_303"><text>Well, you shouldn't have said that. That's a very nice gun indeed.<text></string>
+<string id="dialog_krujka_V_304"><text>A sleeping bag is a must have item. You'll regret not having one.</text></string>
+<string id="dialog_krujka_V_305"><text>Oi, listen, the optics on this one are made in Germany...</text></string>
+<string id="dialog_krujka_V_306"><text>This battery... It's priceless.</text></string>
+<string id="dialog_krujka_V_307"><text>Look, you won't find these belts anywhere else in the Zone!</text></string>
+<string id="dialog_krujka_V_308"><text>Stas will take it to the pantry, until it's needed.</text></string>
+<string id="dialog_krujka_V_309"><text>What the fuck do you want? A sundial?</text></string>
+<string id="dialog_krujka_V_310"><text>You're strange, Marked One. You can exchange these at the Bar for anything.</text></string>
+<string id="dialog_krujka_V_311"><text>That's right. You'll bring your stuff for me to repair.</text></string>
+<string id="dialog_krujka_V_312"><text>What, you don't go out at night?</text></string>
+<string id="dialog_krujka_V_313"><text>It's a rare thing to obtrain first-aid kits like that...</text></string>
+<string id="dialog_krujka_V_314"><text>You do what you want. Gasoline is in short supply right now.</text></string>
+<string id="dialog_krujka_V_315"><text>Yes, I wouldn't say so, but the customer is always right.</text></string>
+<string id="dialog_krujka_V_316"><text>I agree with you. It's not really of the same quality as a NATO MRE...</text></string>
+<string id="dialog_krujka_V_317"><text>Heh, maybe you're trying to stop drinking vodka for a while, give your liver a break.</text></string>
+<string id="dialog_krujka_V_318"><text>Maybe you need a better gun?</text></string>
+<string id="dialog_krujka_V_319"><text>It's a good option, but the anti-radiation drugs are more reliable. At least in my opinion.</text></string>
+<string id="dialog_krujka_V_320"><text>That's a shame. It's a quality product. I assure you, you won't shit your guts out.</text></string>
+<string id="dialog_krujka_V_321"><text>Damn right, but someday such a drink might just save your life..</text></string>
+<string id="dialog_krujka_V_322"><text>Yeah, but when you step into a nest of Tushkanos, you'll remember not taking these bandages.</text></string>
+<string id="dialog_krujka_V_323"><text>Whatever you say. Even if it tastes like shit, it doesn't spoil. </text></string>
+<string id="dialog_krujka_V_324"><text>If you say so. It tastes good though, and it won't spoil..</text></string>
+<string id="dialog_krujka_V_325"><text>You'll have to stuff it with money yourself. I can only provide the sock.</text></string>
+<string id="dialog_krujka_V_326"><text>But the crust is crispy. The best snack alongside a shot of vodka..</text></string>
+
+<string id="dialog_krujka_GG_700"><text>Thank you. I hope it'll be worth it.</text></string>
+<string id="dialog_krujka_V_701"><text>You're welcome.</text></string>
+<string id="dialog_krujka_GG_702"><text>Well, I'm off...	</text></string>
+<string id="dialog_krujka_V_703"><text>Eh, buddy, only the Zone knows how long you'll end up staying here. Though I'm sure you'll celebrate New Year's Eve in these parts.</text></string>
+<string id="dialog_krujka_GG_704"><text>You talk shit, Vergas, but have it your way - I'll take it.</text></string>
+<string id="dialog_krujka_V_705"><text>Alright, deal.</text></string>
+
+<string id="dialog_krujka_GG_2_0"><text>Vergas, I'm back with that "mug".</text></string>
+<string id="dialog_krujka_V_2_1"><text>Are you here to bother the old man again?</text></string>
+<string id="dialog_krujka_GG_2_2"><text>I'm sorry I didn't give it to you right away. You know, I'm still not completely right in the head.</text></string>
+<string id="dialog_krujka_V_2_3"><text>Let me take another look at it. I'll just clean my glasses.</text></string>
+<string id="dialog_krujka_GG_2_10"><text>Oh, for God's sake! Stare at it as much as you like.</text></string>
+<string id="dialog_krujka_GG_2_12"><text>So take it away, my dear. Oh, how much I've endured to obtain it...</text></string>
+<string id="dialog_krujka_GG_2_13"><text>It's a shame, yeah... Spilled so much blood to get it ...</text></string>
+<string id="dialog_krujka_V_2_20"><text>Thank you again, Marked One, for finding it. Take this as compensation for the trouble:</text></string>
+<string id="dialog_krujka_GG_2_21"><text>Thank you. If you ever need me, I will always help you.</text></string>
+<string id="dialog_krujka_GG_2_22"><text>This loot doesn't suit me. Can I exchange it?</text></string>
+<string id="dialog_krujka_V_2_30"><text>That's okay, you're gonna be the one who's drinking tea with it. Don't look so upset. Take this as compensation for your troubles:</text></string>
+<string id="dialog_krujka_GG_2_31"><text>Thanks for that.</text></string>
+
+<string id="dialog_krujka_GG_2_50"><text>This tea is not a museum exhibit; it's the real deal. Give me the reward and take the mug.</text></string>
+<string id="dialog_krujka_V_2_51"><text>I knew, Marked One, that you had a few screws loose after the Death Truck, but to such an extent! That's it! Fuck off with your mug and stay away from me.</text></string>
+
+<string id="dialog_krujka_V_3_1"><text>Did you find another one?</text></string>
+<string id="dialog_krujka_GG_3_2"><text>No, it's the same. You should have taken her away from me. It only takes up space in my backpack.</text></string>
+<string id="dialog_krujka_V_3_3"><text>Let me take another look at her. I have my doubts...</text></string>
+<string id="dialog_krujka_GG_3_4"><text>Yeah sure, take a look at it.</text></string>
+
+
+<string id="dialog_krujka_V_11000"><text>Fuck off!</text></string>
+<string id="dialog_krujka_GG_11001"><text>Alright.</text></string>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="ui_st_conn_version_differs">
+		<text>Connection error: Different versions.</text>
+	</string>
+	<string id="ui_st_conn_cdkey_invalid">
+		<text>Connection error: Wrong CD-Key.</text>
+	</string>
+	<string id="ui_st_conn_cdkey_in_use">
+		<text>Connection error: This CD-key is already in use.</text>
+	</string>
+	<string id="ui_st_conn_cdkey_disabled">
+		<text>Connection error: Your CD-Key is blocked. Contact our support team.</text>
+	</string>
+	<string id="ui_st_conn_new_patch">
+		<text>A new patch is available. \n Version: %s\n %s\n Do you want to download it now?</text>
+	</string>
+	<string id="ui_st_conn_no_new_patch">
+		<text>No new patches.</text>
+	</string>
+</string_table>

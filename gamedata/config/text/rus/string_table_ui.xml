@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="cant_walk"><text>I need to rest...</text></string>
+<string id="cant_walk_weight"><text>Can't walk! Too heavy...</text></string>
+<string id="dar_poltergeist_hold_the_door"><text>Someone or something is holding the door</text></string>
+<string id="Global Map"><text>Global map</text></string>
+<string id="gun_jammed"><text>The weapon has jammed. Reload.</text></string>
+<string id="water"><text>Get some water</text></string>
+<string id="ground"><text>on the asphalt</text></string>
+<string id="both"><text>on water and asphalt</text></string>
+<string id="disabled"><text>disabled</text></string>
+<string id="default"><text>default</text></string>
+<string id="hdao"><text>HDAO</text></string>
+<string id="hbao"><text>HBAO</text></string>
+<string id="qt_off"><text>disabled</text></string>
+<string id="qt_low"><text>low (recommended)</text></string>
+<string id="qt_high"><text>high</text></string>
+<string id="inventory_box_use"><text>Search the box</text></string>
+<string id="Local Map"><text>Local map</text></string>
+<string id="st_game_saved"><text>Game saved</text></string>
+<string id="tip_car_locked"><text>Blocked</text></string>
+<string id="tip_car_use"><text>Open</text></string>
+<string id="tip_door_close"><text>Close</text></string>
+<string id="tip_door_coded"><text>The door is locked by a code</text></string>
+<string id="tip_door_decode"><text>Decode the door</text></string>
+<string id="tip_door_decoding"><text>Decoding in progress.</text></string>
+<string id="tip_door_locked"><text>Locked</text></string>
+<string id="tip_door_open"><text>Open</text></string>
+<string id="tip_gate_close"><text>Close the gate</text></string>
+<string id="tip_gate_locked"><text>The door is locked</text></string>
+<string id="tip_gate_open"><text>Open the gate</text></string>
+<string id="on_pribor"><text>Turn on</text></string>
+<string id="off_pribor"><text>Turn off</text></string>
+<string id="open"><text>Open</text></string>
+<string id="take_card"><text>Take the data card</text></string>
+<string id="tip_monolith"><text>Make a wish</text></string>
+<string id="st_demo_play"><text>AMK MOD 1.4.1</text></string>
+</string_table>

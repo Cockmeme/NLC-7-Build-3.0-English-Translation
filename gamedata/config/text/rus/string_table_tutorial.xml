@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="binoc_tutorial">
+		<text>To use the binoculars, select them ($$ACTION_wpn_5$$) and press "fire" to zoom in.</text>
+	</string>
+	<string id="binocular">
+		<text>Binoculars</text>
+	</string>
+	<string id="crouch">
+		<text>Crouching</text>
+	</string>
+	<string id="crouch_down_tutorial">
+		<text>To crouch lower, press ($$ACTION_crouch$$) + (Shift)</text>
+	</string>
+	<string id="crouch_tutorial">
+		<text>To crouch, press ($$ACTION_crouch$$). To crouch even lower, press ($$ACTION_crouch$$) + ($$ACTION_accel$$)</text>
+	</string>
+	<string id="hide_weapon">
+		<text>Weapon select</text>
+	</string>
+	<string id="hide_weapon_tutorial">
+		<text>Some stalkers won't want to talk if you stick your weapon in their face. To hide your weapon you only need to select a bolt. ($$ACTION_wpn_6$$).</text>
+	</string>
+	<string id="jump">
+		<text>Jumping</text>
+	</string>
+	<string id="jump_tutorial">
+		<text>The jumps will help you climb on top of medium barriers. To jump, press ($$ACTION_jump$$)</text>
+	</string>
+	<string id="move_tutorial">
+		<text>Movement types.</text>
+	</string>
+	<string id="overload">
+		<text>Overloading</text>
+	</string>
+	<string id="overload_tutorial">
+		<text>Humans are not mules, so there's a limit to how much they can carry. When the weight of their gear exceeds their limits, they will start losing energy very quickly. The current weight of your equipment and the maximum weight you can carry in your inventory can be monitored.</text>
+	</string>
+	<string id="radiation">
+		<text>Radiation</text>
+	</string>
+	<string id="radiation_tutorial">
+		<text>When a radioactive artifact is worn on the belt or an area is entered with a high level of background radiation, health starts to degrade and signs of radiation poisoning will be exhibited. Effect of radiation can be countered by using antiradiation drugs and vodka.</text>
+	</string>
+	<string id="relation">
+		<text>attitude</text>
+	</string>
+	<string id="relation_tutorial">
+		<text>Helping other characters improves their attitude and one's standing in the stalker community, as well as one's general reputation. Better attitude and higher reputation help when interacting with people. They will be prone to give additional information and sell their items cheaper if they consider someone in their good books. On the other hand, if someone is opened fire at, their attitude will quickly turn negative, as will that of their friends, and they will attack.</text>
+	</string>
+	<string id="sleep_tutorial">
+		<text>Here you can get a good night's sleep, wait out the night, or simply kill some time. To wake up at a certain time, pull out your watch and, after adjusting the time on the dial, set your alarm. You will wake up at the designated time.</text>
+	</string>
+	<string id="sprint">
+		<text>Speeding-up</text>
+	</string>
+	<string id="sprint_tutorial">
+		<text>Sometimes running faster than usual will be necessary. Sprint by pressing ($$ACTION_sprint_toggle$$). A sprinting person not only runs faster but also jumps further. However, they tire more quickly and are unable to shoot accurately.</text>
+	</string>
+	<string id="starvation_tutorial">
+		<text>With time, a feeling of hunger will appear. Unless one finds something to eat, they will grow increasingly tired and slowly start losing health. To prevent this, one must eat regularly. Tinned food or a piece of sausage with a loaf of bread to boot will solve the problem easily enough, at least for a while.</text>
+	</string>
+	<string id="tutorial">
+		<text>Training</text>
+	</string>
+	<string id="weakness">
+		<text>Fatigue</text>
+	</string>
+	<string id="weakness_tutorial">
+		<text>Carrying many heavy items causes fatigue to accumulate. When exhausted, one will not be able to run nor walk for some time. Standing still for a few seconds is enough to partially recuperate. Only sleep can fully restore one's energy.</text>
+	</string>
+	<string id="weapon">
+		<text>State of the weapon</text>
+	</string>
+	<string id="weapon_tutorial">
+		<text>All weapons have a durability parameter. The lower a weapon's durability, the more often it jams. To unjam, reload the weapon by pressing $$ACTION_wpn_reload$$. The weapon's durability decreases with use. A weapon may become completely useless if struck by bullets or a blast wave.</text>
+	</string>
+	<string id="wound">
+		<text>Open wounds</text>
+	</string>
+	<string id="wound_tutorial">
+		<text>When the body is struck (by bullets, mutant claws etc.), he may start to bleed. Bleeding causes a constant health loss. The more serious the bleeding (a green icon means slight bleeding, a red icon indicates a serious hemorrhage), the faster the rate at which health is lost. Only minor bleeding will eventually stop with time, but most types can usually be stopped using bandages.</text>
+	</string>
+	<string id="pda_diary_tutorial">
+		<text>In PDA of the deceased stalker are his observations on anomalies in tunnels. It turns out to be that he discovered the regularity of their appearance. This information can be read in the PDA in the "Diary" section.</text>
+	</string>
+</string_table>
