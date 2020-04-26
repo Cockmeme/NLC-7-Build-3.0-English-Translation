@@ -1,7 +1,7 @@
 # NLC-7-Build-3.0-English-Translation
 An english translation of NLC 7 Build 3.0. This repository will be periodically updated to include files, which have been fully translated.
 
-Credits: Kazemeka, tactical spaghet A.K.A. Adrian Jade, Unrealrus, Redshift, Osteos, Terry Tuna, Comrade Cat, Sasha Red
+Credits: Kazemeka, tactical spaghet A.K.A. Adrian Jade, Unrealrus, Redshift, Osteos, Terry Tuna, Igor "Comrade Cat" Koskin, Sasha Red
 
 
  File list                           Status
@@ -261,4 +261,64 @@ ui_st_others.xml                      Finished
 
 ui_st_pda.xml                         Awaiting revision
 
+
+*SCRIPTS*
+
+allcore\allcore_hide.script
+
+alpet\dlc_manager.script
+
+amk\amk_dolg.script
+
+amk\amk_freedom.script
+
+amk\amk_names_lists.script
+
+amk\amk_news_lists.script
+
+amk\amk_offline_alife.script
+
+amk\amk_uniq_news_lists.script
+
+amk\UNDONE amk_death_lists.script
+
+arts\amk_uniq_news_lists.script
+
+arts\arc_diary.script
+
+arts\arc_ui_container_common.script
+
+binders\bind_monster.script
+
+news\news_data.script
+
+news\news_main.script
+
+news\news_mikelik.script
+
+ph\ph_code_new.script
+
+sak\sak.script
+
+sak\sak_artmods.script
+
+sak\sak_dialog.script
+
+sak\sak_rand_nagrad.script
+
+vergas\medkit_use.script
+
+vergas\used_items.script
+
+vergas\vergas_flask.script
+
+vergas\vergas_masks.script
+
+vergas\vergas_medical_elastic.script
+
+doc.script
+
+gps_habar.script
+
+mike.script
 
