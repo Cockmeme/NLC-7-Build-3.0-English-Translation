@@ -16,8 +16,6 @@ amk_strings.xml                      Awaiting revision
 
 arc_string_table.xml                 In progress
 
-dialogs_trading.xml                   Untranslated
-
 doc_dialogs.xml                      Awaiting revision
 
 mike_strings.xml                     In progress
