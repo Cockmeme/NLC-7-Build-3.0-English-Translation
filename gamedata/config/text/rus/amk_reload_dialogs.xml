@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>	
+
+<string id="flame_reload_1"><text>Did you say you could reload a flamethrower? I think now would be a good time to do that.</text></string>
+
+<string id="flame_reload_2"><text>Yeah, I can. Do you have a tank of gas? Or am I supposed to give you some? I'm warning you, if I have to go search for it, you'll have to pay. It'll cost you 30,000. And I won't be able to work while sober... So get me a bottle of vodka too!</text></string>
+
+<string id="flame_reload_3"><text>Vodka again?! No, you'll manage without it. And I'm having a hard time earning money... I'll live without a flamethrower somehow..</text></string>
+
+<string id="flame_reload_4"><text>How many drinks can you have? Here you go. And I got the fuel. Just make it quick..</text></string>
+
+<string id="flame_reload_5"><text>It'll take about 30 minutes...</text></string>
+
+<string id="flame_reload_6"><text>Okay. But be quick about it, I'm in a hurry.</text></string>
+
+<string id="flame_reload_7"><text>No, I don't have any gas. Here, take the 30,000 and the bottle. Hurry up and work!</text></string>
+
+<string id="flame_reload_8"><text>Alright... Thank you. I'll have it done tomorrow.</text></string>
+
+<string id="flame_reload_9"><text>No way! A whole day... No thanks, man. Let's have a drink... Have a nice day!</text></string>
+
+<string id="flame_reload_10"><text>What's up with filling up my flamethrower?</text></string>
+
+<string id="flame_reload_11"><text>It's done! Don't have to do anything else. Here you go...</text></string>
+
+<string id="flame_reload_12"><text>Thank you! See you later.</text></string>
+
+<string id="flame_reload_13"><text>Wait a little longer! It's not as easy at it looks. Come back later.</text></string>
+
+<string id="flame_reload_14"><text>Okay. Go back to work.!</text></string>
+
+</string_table>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+<string id="outfit_soldier_name"><text>Bright jacket</text></string>
+<string id="outfit_soldier_description"><text>A regular thick jacket. It will protect you from the weather, but not against anything else. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="novice_gaz_outfit_m1_name"><text>Bright jacket with gasmask</text></string>
+<string id="novice_gaz_outfit_m1_description"><text>A regular tight jacket. It will protect you from the weather, but not against anything else. \nA simple gasmask is included. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+	
+<string id="stalker_outfit_name"><text>"Sunrise" overalls</text></string>
+<string id="stalker_outfit_description"><text>Produced by folk craftsmen, the "Sunrise" overalls consist of a combination of two-layer rubberized fabric with a special flame retardant and a lightweight Kevlar vest, capable of stopping a pistol bullet. Overall, it is extremely insufficient for deep raids and serious operations in the depths of the Zone. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="stalker_guard_outfit_name"><text>Lightweight overalls</text></string>
+<string id="stalker_guard_outfit_description"><text>Lightweight version of the "Sunrise" overalls, consisting from the rubberized fabric with antipyrene impregnation and a lightweight kevlar armored vest, strengthened with steel armor plates. Does not restrict movement. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="neytral_gaz_outfit_m1_name"><text>"Sunrise" overalls with gasmask</text></string>
+<string id="neytral_gaz_outfit_m1_description"><text>Produced by folk craftsmen, the "Sunrise" overalls consist of a combination of two-layer rubberized fabric with a special flame retardant and a lightweight Kevlar vest, capable of stopping a pistol bullet. Overall, it is extremely insufficient for deep raids and serious operations in the depths of the Zone. \nA simple gasmask is included. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="neytral_gaz_outfit_m2_name"><text>KSu "Sunrise" overalls</text></string>
+<string id="neytral_gaz_outfit_m2_description"><text>$outfit_general_info The "Commander" modification of the "Sunrise" overalls, with increased protection against anomalies, due to additional impregnations and improvement of gasmask filtration system. In addition, the vest is reinforced with metal inserts in key locations. \nA simple gasmask is included \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="stalker_outfit_name_m1"><text>Ghost's "Sunrise" overalls</text></string>
+<string id="stalker_outfit_description_m1"><text>$outfit_general_info "Sunrise" overalls, modified by Ghost. A home-made system for suppressing the effect of anomalous fields is built into the overalls. Key locations on the overalls have been skillfully chosen to be protected by armor elements. This layout allows the wearer to become less tired while moving.\nIncludes a "Protecta" helmet with built-in NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="stalker_outfit_name_m2"><text>Tourist's stalker overalls</text></string>
+<string id="stalker_outfit_description_m2"><text>The former owner of this thing was a real tourist, and apparently, he went on tours on the edge of human capabilities. He knew how to distribute the weight correctly, so that the movement would remain unconstricted. The overalls's pockets and a carefully selected backpack allow for more weight to be carried. \nIncludes a simple gasmask. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="stalker_outfit_name_m3"><text>Reinforced "Sunrise" overalls</text></string>
+<string id="stalker_outfit_description_m3"><text>$outfit_general_info Unique, high-strength "Sunrise" overalls. Possesses huge firmness to mechanical influences. How and who converted an ordinary overalls to this wonder is unknown. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="scientific_outfit_name"><text>"SEVA" armored air-tight suit</text></string>
+<string id="scientific_outfit_description"><text>$outfit_general_info The "SEVA" armored suit was produced by one of Kiev's defense research institutes. It is an excellent combination of an armored jumpsuit, a closed-cycle breathing system, as well as a built-in anomalous field supression system. The only drawback is the great restriction of movement. \nIncludes an airtight "Screen" helmet with built-in NVD. \nThe backpack included in the PSZ-9Md kit, allows the wearer to carry up to $carrying kg. </text></string>
+
+
+
+<string id="exo_outfit_name"><text>Exoskeleton</text></string>
+<string id="exo_outfit_description"><text>$outfit_general_info A sample of an experimental military exoskeleton. It never went into mass production, due to its extremely high cost and major design errors. Despite this, it is issued in small batches in black markets outside of Ukraine. This exoskeleton is from the third generation. It eliminates design flaws that dramatically reduced mobility, as well as includes reinforced armor. Provides balanced protection against all external influences. \nIncludes a helmet-mask with built-in NVD and improved air filtration system. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="broken_exoskeleton_name"><text>Damaged exoskeleton</text></string>
+<string id="broken_exoskeleton_description"><text>$outfit_general_info Heavily damaged, but still working exoskeleton. It can be patched up, but it can't be fully repaired without fine factory equipment. Due to critical damage to important parts of the servo drives, there is no possibility of running. \nIncludes a helmet-mask with built-in NVD and improved air filtration system. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="bandit_outfit_name"><text>Black jacket</text></string>
+<string id="bandit_outfit_description"><text>$outfit_general_info The black leather jacket is part of traditional gangster clothing. Provides some protection, however it is extremely inadequate in the harsh environment of the Zone. \nAllows the wearer to carry up to $carrying kg. </text></string>
+
+
+
+<string id="bandit_gaz_outfit_m1_name"><text>Black jacket with gasmask</text></string>
+<string id="bandit_gaz_outfit_m1_description"><text>$outfit_general_info The black leather jacket is part of traditional gangster clothing. Provides some protection, however it is extremely inadequate in the harsh environment of the Zone. \nIncludes a simple gasmask. \nAllows the wearer to carry up to $carrying kg. </text></string>
+
+
+
+<string id="bandit_outfit_name_m"><text>Chainmail black jacket</text></string>
+<string id="bandit_outfit_description_m"><text>$outfit_general_info A regular black jacket, with chainmail sown into the jacket's lining. Almost everyone can do it, but not everyone is patient enough. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="bandit_veteran_outfit_name"><text>Brown coat</text></string>
+<string id="bandit_veteran_outfit_description"><text>$outfit_general_info Handmade coat out of flesh skin. Flesh hides have the ability to effectively resist sharp impacts, which provides a comparibly high bullet resistance. However, this exact feature turns the process of making objects from flesh skin into grueling labor, limiting production to only the rarest of master leathersmiths. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="bandit_veteran_outfit_gas_name"><text>Brown coat with gasmask</text></string>
+<string id="bandit_veteran_outfit_gas_description"><text>$outfit_general_info Handmade coat out of flesh skin. Flesh hides have the ability to effectively resist sharp impacts, which provides a comparibly high bullet resistance. However, this exact feature turns the process of making objects from flesh skin into grueling labor, limiting production to only the rarest of master leathersmiths. \nIncludes a simple gasmask. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="bandit_veteran_outfit_m1_name"><text>Durable brown coat</text></string>
+<string id="bandit_veteran_outfit_m1_description"><text>$outfit_general_info Handmade coat out of flesh skin. This coat is very carefully stitched, which provides increased strength. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="bandit_master_outfit_name"><text>Black coat</text></string>
+<string id="bandit_master_outfit_description"><text>$outfit_general_info Handmade coat out of marsh flesh skin. Flesh hides have the ability to effectively resist sharp impacts, which provides a comparibly high bullet resistance. However, this exact feature turns the process of making objects from flesh skin into grueling labor, limiting production to only the rarest of master leathersmiths. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="bandit_master_outfit_gas_name"><text>Black coat with gasmask</text></string>
+<string id="bandit_master_outfit_gas_description"><text>$outfit_general_info Handmade coat out of marsh flesh skin. Flesh hides have the ability to effectively resist sharp impacts, which provides a comparibly high bullet resistance. However, this exact feature turns the process of making objects from flesh skin into grueling labor, limiting production to only the rarest of master leathersmiths. \nIncludes a simple gasmask. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="bandit_master_outfit_m"><text>Unique black coat</text></string>
+<string id="bandit_master_outfit_description_m"><text>$outfit_general_info A black coat with a unique dressing of the marsh flesh skin, which made it very soft. This, in turn, makes it so, that the wearer does not become tired easily. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="exo_bandit_outfit_name"><text>"Marauder" exoskeleton</text></string>
+<string id="exo_bandit_outfit_description"><text>$outfit_general_info An exoskeleton used by the bandits, crafted using parts from various used and broken exoskeletons of other factions. The armor elements are skillfully sewn, but their unskillful placement leaves vulnerable spots. The servo drivers barely work, which rules out the possibility of running. A very rare and, surprisingly, working copy. This suit shows the extremely high status among the bandits. It's only available to a few individuals. \nIncludes a helmet-mask with built-in NVD and improved air filtration system. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="dolg_outfit_name"><text>PSZ-9d armored suit</text></string>
+<string id="dolg_outfit_description"><text>Produced by one of Kyiv's defense research institutes, according to Duty's specifications. The simplicity and durability of the base model PSZ-9, in combination with new materials, provides good protection from various physical influences. \nThe backpack, included in the PSZ-9d kit, allows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="dolg_outfit_gaz_m1_name"><text>PSZ-9d-2 armored suit</text></string>
+<string id="dolg_outfit_gaz_m1_description"><text>$outfit_general_info Produced by one of Kyiv defense research institutes, according to Duty's specifications. The simplicity and reliability of the basic model PSZ-9, in combination with new materials offers good protection from various physical influences. \nIncludes a simple gas mask. \nThe backpack, included in the PSZ-9d-2 kit, allows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="dolg_scientific_outfit_name"><text>PSZ-9Md armored air-tight suit</text></string>
+<string id="dolg_scientific_outfit_description"><text>$outfit_general_info Produced by one of Kiev defense research institutes, according to Duty's specifications. A modified PSZ-9d with increased resistance to anomalous effects, due to the built-in first generation anomalous field supression system and a closed-cycle breathing system. Constraints the movement. \nIncludes an air-tight "Screen" helmet with built-in NVD. \nThe backpack, included in the PSZ-9Md kit, allows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="dolg_outfit_name_m1"><text>PSZ-9d-O armored suit</text></string>
+<string id="dolg_outfit_description_m1"><text>$outfit_general_info An armored suit from Duty, modified by a skilled artisan. Substantially increased protection against bites and cuts. Used in clearing of mutant lairs. \nIncludes a simple gas mask. \nThe backpack, included in PSZ-9d-O kit, allows the wearer to carry up to $carrying kg.</text></string>
+
+
+		
+<string id="dolg_black_exoskeleton_name"><text>Exoskeleton EX13-1</text></string>
+<string id="dolg_black_exoskeleton_description"><text>$outfit_general_info Produced by one of Kiev defense research institutes, according to Duty's specifications. It is based on a heavy armored suit with an emphasis on rupture and impact protection. The high quality servo drives allow the wearer to run around, while almost not feeling the weight of the backpack. \nIncludes an advanced helmet mask with integrated NVD and improved air filtration system. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+	
+<string id="ecolog_outfit_name"><text>SSP-99 "Ecologist" air-tight suit</text></string>
+<string id="ecolog_outfit_description"><text>$outfit_general_info The SSP-99 air-tight suit is created for use in the anomalous conditions of the Zone. It is used by scientists and environmental stalkers cooperating with them. Has a built-in air filtration and conditioning system, as well as a first-generation anomalous field supression system. Not designed for combat operations. Visibly slows down the movement and makes it difficult to breathe. \nIncludes an airtight "Screen" helmet with built-in NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="protection_outfit_name"><text>SSP-99M "Vega" air-tight suit</text></string>
+<string id="protection_outfit_description"><text>$outfit_general_info High-quality modified SSP-99 air-tight suit. Added torso protection against bullet, impact and shrapnel damage. Improved layout, which, compared with SSP-99, allows for more mobility. Includes a built-in second generation anomalous field supression system. Effectively protects against radiation and biological anomalies. Resistant to chemically aggressive environments and other harmful effects. \nIncludes air-tight "Screen" helmet with built-in NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="killer_outfit_name"><text>Special forces overalls</text></string>
+<string id="killer_outfit_description"><text>$outfit_general_info Private Military Company fighter's overalls. Based on samples of equipment of special forces of the Western armies, which were later modified, given the conditions of the Zone. Due to the special treatment of the fabric, the strength of the armor is increased with the physical displacement of the plates. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="killer_gaz_outfit_m1_name"><text>Special forces overalls with gasmask</text></string>
+<string id="killer_gaz_outfit_m1_description"><text>$outfit_general_info Private Military Company fighter's overalls. Based on samples of equipment of special forces of the Western armies, which were later modified, given the conditions of the Zone. Due to the special treatment of the fabric, the strength of the armor is increased with the physical displacement of the plates. \nIncludes an experimental gas mask XM40 with dirt-proof electrostatic layer on the visor, as well as NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="killer_outfit_name_m1"><text>Reinforced special forces overalls</text></string>
+<string id="killer_outfit_description_m1"><text>$outfit_general_info Private Military Company fighter's overalls. Based on samples of equipment of special forces of the Western armies, which were later modified, given the conditions of the Zone. Due to the special treatment of the fabric, the strength of the armor is increased with the physical displacement of the plates. A chainmail layer is sewn into the lining of the jacket, increasing protection against impacts. \nIncludes an experimental gas mask XM40 with dirt-proof electrostatic layer on the visor, as well as NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="merc_scientific_outfit_name"><text>Armored air-tight special forces suit</text></string>
+<string id="merc_scientific_outfit_description"><text>$outfit_general_info An air-tight suit of fighters from a private military company, who operate in anomalous areas. Contains a built-in closed-cycle breathing system and a first generation anomalous field supression system. Designed for combat operations in highly anomalous conditions. Restricts movement. \nIncludes an air-tight "Screen" helmet with a mudproof electrostatic layer on the visor, as well as NVD. \nAllows the wearer to carry up to $carrying kg. </text></string>
+
+
+
+<string id="killer_blue_exoskeleton_name"><text>Special forces exoskeleton</text></string>
+<string id="killer_blue_exoskeleton_description"><text>$outfit_general_info Experimental model of a western military third generation exoskeleton. It is used by private military companies. The emphasis is on combat use. High quality servo drives make it possible to move around on the run without feeling the weight of the backpack. \nIncludes an advanced helmet mask with built-in NVD and improved air filtration system. The visor is covered with an electrostatic mud-proof layer. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="svoboda_light_outfit_name"><text>"Wind of Freedom" overalls</text></string>
+<string id="svoboda_light_outfit_description"><text>$outfit_general_info Lightweight "Sunrise" overalls, produced by Freedom craftsmen. Consists of a Lightweight army vest plus reinforcing Kevlar plates. Capable of protecting against weak weapons. The fabric is treated with a special compound that increases resistance to anomalous activity. Good armor plate placement does not restrict movement. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="svoboda_outfit_name_m1"><text>"Wind of Freedom" overalls with gasmask</text></string>
+<string id="svoboda_outfit_description_m1"><text>$outfit_general_info Lightweight "Sunrise" overalls, produced by Freedom craftsmen. Consists of a Lightweight army vest plus reinforcing Kevlar plates. Capable of protecting against weak weapons. The fabric is treated with a special compound that increases resistance to anomalous activity. Good armor plate placement does not restrict movement. \nIncludes a simple gasmask. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="outfit_svoboda_gaz_m1_name"><text>Improved "Wind of Freedom" overalls</text></string>
+<string id="outfit_svoboda_gaz_m1_description"><text>$outfit_general_info Lightweight "Sunrise" overalls, produced by Freedom craftsmen. Consists of a Lightweight army vest plus reinforcing Kevlar plates. Capable of protecting against weak weapons. The fabric is treated with a special compound that increases resistance to anomalous activity. Good armor plate placement does not restrict movement. \nIncludes a gasmask with improved air filtration system, as well as NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="svoboda_heavy_outfit_name"><text>"Guardian of Freedom" overalls</text></string>
+<string id="svoboda_heavy_outfit_description"><text>$outfit_general_info Reinforced "Sunrise" overalls made by Freedom craftsmen. Consists of an average army vest plus reinforcing zirconium elements, which provide good protection against bullets and shrapnel at various distances. The material of the suit consists of two layers: specially treated leather and asbesthos fabric. It provides some protection against various anomalous influences and radiation. \nIncludes a gas mask with improved air filtration system, as well as NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="svoboda_heavy_gaz_outfit_m1_name"><text>Reinforced "Guardian of Freedom" overalls</text></string>
+<string id="svoboda_heavy_gaz_outfit_m1_description"><text>$outfit_general_info Reinforced "Sunrise" overalls, made by Freedom craftsmen. Consists of a medium-range army vest with bulletproof armor elements plus steel plates in key areas, that provide good protection from bullets and shrapnel. The material of the suit consists of two layers: specially treated leather and asbesthos fabric. Due to special impregnations the protection against various abnormal influences and radiation is strengthened. \nIncludes a modified gas mask with improved air filtration system, as well as NVD. \nAllows the wearer to carry up to $carrying kg. </text></string>
+
+
+
+<string id="freedom_scientific_outfit_name"><text>"Honor of Freedom" armored air-tight suit</text></string>
+<string id="freedom_scientific_outfit_description"><text>$outfit_general_info Produced by Freedom, for scientific research in the Zone. Has a closed-cycle breathing system, a built-in second generation anomalous field suppression system. The layout of this suit reduces fatigue during movement, in comparison to other faction's analogues. \nIncludes an airtight "Screen" helmet with built-in NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="svoboda_exoskeleton_name"><text>"Power of Freedom" exoskeleton</text></string>
+<string id="svoboda_exoskeleton_description"><text>$outfit_general_info Produced by master Freedom craftsmen. After many attempts and experimental modifications, they managed to create a successful construction. Its characteristics are comparable to those of their analogues, but the protection against anomalous effects has been increased. \nIncludes an improved helmet-mask with built-in NVD and improved air filtration system. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="outfit_soldier_m1_name"><text>Bulletproof vest</text></string>
+<string id="outfit_soldier_m1_description"><text>$outfit_general_info The standard set of equipment for a soldier - a lightly armored military PSZ-7 vest. Effectively protects against pistol bullets and shrapnel. It is ineffective against abnormal and other influences.\nIncludes a backpack with load capacity of $carrying kg.</text></string>
+
+
+
+<string id="specops_outfit_name"><text>Beryl-5M armored suit</text></string>
+<string id="specops_outfit_description"><text>$outfit_general_info Beryl-5M is a suit used by the Army special forces. It has been modified for use in anomalous areas.  It consists of a PSZ-7 military armor vest with beryllium inserts. \nIncludes a "Sphere-08" helmet with built-in NVD. \nIncludes a backpack with a load capacity of $carrying kg.</text></string>
+
+
+
+<string id="military_outfit_name"><text>SKAT-9M armored suit</text></string>
+<string id="military_outfit_description"><text>$outfit_general_info The military armored suit SKAT-9M is designed for assault operations in areas of high anomalous activity. It consists of a military PSZ-12p armored suit with built-in protection, that provide excellent protection against bullet and shrapnel impacts. In addition, there is a balanced anomalous protection system. \nIncludes a "Sphere-12M" helmet with built-in NVD. \nIncludes a backpack with a load capacity of $carrying kg.</text></string>
+
+
+
+<string id="militaryspec_outfit_name"><text>SKAT-10 armored suit</text></string>
+<string id="militaryspec_outfit_description"><text>$outfit_general_info The special military armored suit SKAT-10 is created on the basis of the well-proven SKAT-9M. It is ideal for carrying out assault operations in highly anomalous zones. It consists of a military PSZ-12SA heavy armored suit and the built-in protection, which provide great protection against bullets and shrapnel. In addition, there is a balanced protection system against second-level anomalies. \nIncludes an improved "Sphere-12FE" helmet with built-in NVD. \nIncludes a backpack with a load capacity of $carrying kg.</text></string>
+
+
+
+<string id="outfit_gravisak_name"><text>Gravi-suit</text></string>
+<string id="outfit_gravisak_description"><text>$outfit_general_info A standard military light armored vest PSZ-7, which, under unclear circumstances, has acquired the property of producing an anti-gravity field around the carrier, which allows carrying $carrying kg. Very fragile due to the instability of the field.</text></string>
+
+
+
+<string id="cs_light_outfit_name"><text>CH-1 overalls</text></string>
+<string id="cs_light_outfit_description"><text>$outfit_general_info These overalls were developed for search operations in areas with low anomalous activity. It is a combination of a two-layer specially impregnated rubberized fabric and a lightweight Kevlar bulletproof vest of unknown manufacture. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="cs_heavy_outfit_name"><text>CH-3a armored suit</text></string>
+<string id="cs_heavy_outfit_description"><text>$outfit_general_info Once upon a time it was a regular outfit for members of Clear Sky. The reinforced bulletproof vest provides effective protection against shrapnel and bullets. It also has a balanced system of protection against second-level anomalies. Very appreciated in the stalker community. \nIncludes a "Protecta" helmet with built-in NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="monolit_outfit_name"><text>"Monolith" overalls</text></string>
+<string id="monolit_outfit_description"><text>$outfit_general_infoOveralls from the Monolith faction. The manufacturer is unknown. It resembles the "Sunrise" overalls, widely distributed among neutral stalkers, but is made using unknown materials. \nAllows the wearer to carry up to $carrying kg.</text></string>
+	
+	
+	
+<string id="monolit_gaz_outfit_m1_name"><text>"Monolith" overalls with gasmask</text></string>
+<string id="monolit_gaz_outfit_m1_description"><text>$outfit_general_infoOveralls from the Monolith faction. The manufacturer is unknown. It resembles the "Sunrise" overalls, widely distributed among neutral stalkers, but is made using unknown materials. \nIncludes a modified gas mask with improved air filtration system. \nAllows the wearer to carry up to $carrying kg.</text></string>
+	
+	
+	
+<string id="monolit_scientific_outfit_name"><text>"Monolith" armored air-tight suit</text></string>
+<string id="monolit_scientific_outfit_description"><text>$outfit_general_info Like most Monolith creations, the technology is unknown. It was discovered, that the materials contain extraterestrial substances. They are lighter than their earthly counterparts and are very well shielded from radiation. The characteristics are otherwise similar to those of other faction's suits. The layout of the suit reduces the fatigue exerted on the wearer. \nIncludes an airtight helmet with built-in NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+	
+	
+	
+<string id="monolit_exoskeleton_name"><text>"Monolith" exoskeleton</text></string>
+<string id="monolit_exoskeleton_description"><text>$outfit_general_info The technology of this creation is unknown. In the composition of the material, an unknown metal was discovered, whose origin is unknown. The suit has excellent protection in every way. \nIncludes a helmet-mask with an improved air filtration system and NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="super_scientific_outfit_name"><text>Experimental special protection suit</text></string>
+<string id="super_scientific_outfit_description"><text>$outfit_general_info An excellent experimental prototype of a protective suit for scientific research in the Zone. Made out of special materials developed using artifacts. A unique suit, however it is very expensive to operate. \nIncludes an air-tight "Screen-M" helmet with built-in NVD. \nAllows the wearer to carry up to $carrying kg.</text></string>
+
+
+
+<string id="ecolog_outfit_m1_name"><text>KM-2</text></string>
+<string id="ecolog_outfit_m1_description"><text>$outfit_general_info A special experimental protection suit, designed for use in the Zone. The uniqueness of this model is an experimental out-of-phase psy radiation generator, which allows you to protect yourself from the influence of the Brain Scorcher for several minutes.</text></string>
+</string_table>
