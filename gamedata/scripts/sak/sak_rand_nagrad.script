@@ -1,0 +1,661 @@
+local item_rand=0
+
+local table_amkart={
+	"af_armor_1",
+	"af_babka_1",
+	"af_cry_1",
+	"af_dik_1",
+	"af_kol_1",
+	"af_pudd_1",
+	"af_spirit_1",
+	"af_dummy_buliz",
+	"af_dummy_simbion",
+	"af_armor_5",
+	"af_babka_5",
+	"af_cry_5",
+	"af_dik_5",
+	"af_kol_5",
+	"af_pudd_5",
+	"af_spirit_5",
+	"af_dummy_simbion_fake",
+	"af_dummy_buliz_fake",
+
+	"af_armor_2",
+	"af_babka_2",
+	"af_cry_2",
+	"af_dik_2",
+	"af_kol_2",
+	"af_pudd_2",
+	"af_spirit_2",
+	"af_armor_6",
+	"af_babka_6",
+	"af_cry_6",
+	"af_dik_6",
+	"af_kol_6",
+	"af_pudd_6",
+	"af_spirit_6",
+
+	"af_armor_3",
+	"af_babka_3",
+	"af_cry_3",
+	"af_dik_3",
+	"af_kol_3",
+	"af_pudd_3",
+	"af_spirit_3",
+	"af_armor_7",
+	"af_babka_7",
+	"af_cry_7",
+	"af_dik_7",
+	"af_kol_7",
+	"af_pudd_7",
+	"af_spirit_7",
+
+	"af_armor_4",
+	"af_babka_4",
+	"af_cry_4",
+	"af_dik_4",
+	"af_kol_4",
+	"af_pudd_4",
+	"af_spirit_4",
+	"af_armor_8",
+	"af_babka_8",
+	"af_cry_8",
+	"af_dik_8",
+	"af_kol_8",
+	"af_pudd_8",
+	"af_spirit_8"
+}
+
+local table_amkaart={
+	"af_armor_1",
+	"af_babka_1",
+	"af_cry_1",
+	"af_dik_1",
+	"af_kol_1",
+	"af_pudd_1",
+	"af_spirit_1",
+	"af_dummy_buliz",
+	"af_dummy_simbion",
+	"af_armor_5",
+	"af_babka_5",
+	"af_cry_5",
+	"af_dik_5",
+	"af_kol_5",
+	"af_pudd_5",
+	"af_spirit_5",
+	"af_dummy_simbion_fake",
+	"af_dummy_buliz_fake"
+}
+
+local table_amkbart={
+	"af_armor_2",
+	"af_babka_2",
+	"af_cry_2",
+	"af_dik_2",
+	"af_kol_2",
+	"af_pudd_2",
+	"af_spirit_2",
+	"af_armor_6",
+	"af_babka_6",
+	"af_cry_6",
+	"af_dik_6",
+	"af_kol_6",
+	"af_pudd_6",
+	"af_spirit_6"
+}
+
+local table_amkcart={
+	"af_armor_3",
+	"af_babka_3",
+	"af_cry_3",
+	"af_dik_3",
+	"af_kol_3",
+	"af_pudd_3",
+	"af_spirit_3",
+	"af_armor_7",
+	"af_babka_7",
+	"af_cry_7",
+	"af_dik_7",
+	"af_kol_7",
+	"af_pudd_7",
+	"af_spirit_7"
+}
+
+local table_amkdart={
+	"af_armor_4",
+	"af_babka_4",
+	"af_cry_4",
+	"af_dik_4",
+	"af_kol_4",
+	"af_pudd_4",
+	"af_spirit_4",
+	"af_armor_8",
+	"af_babka_8",
+	"af_cry_8",
+	"af_dik_8",
+	"af_kol_8",
+	"af_pudd_8",
+	"af_spirit_8"
+}
+
+-------------------- Таблица наград Сидоровича за модификаты
+local sidr_nagrad = {
+		"ammo_5.45x39_fmj", 60,
+		"ammo_5.45x39_ap", 40,
+		"ammo_7.62x39_fmj", 30,
+		"ammo_7.62x39_ap", 20,
+		"ammo_7.62x54_7h1", 25,
+		"ammo_7.62x54_7h14", 15,
+		"ammo_7.62x54_ap", 30,
+		"ammo_vog-25", 30,
+		"military_outfit", 1,
+
+		"ammo_7.62x39_fmj", 50,
+		"ammo_7.62x39_ap", 35,
+		"ammo_9x39_ap", 20,
+		"ammo_7.62x54_7h1", 45,
+		"ammo_7.62x54_7h14", 30,
+		"ammo_7.62x54_ap", 55,
+		"ammo_vog-25", 50,
+
+		"ammo_7.62x39_fmj", 70,
+		"ammo_7.62x39_ap", 50,
+		"ammo_9x39_ap", 30,
+		"ammo_7.62x54_7h1", 65,
+		"ammo_7.62x54_7h14", 45,
+		"ammo_7.62x54_ap", 70,
+		"ammo_vog-25", 70,
+
+		"ammo_9x39_ap", 40,
+		"ammo_7.62x54_7h1", 80,
+		"ammo_7.62x54_7h14", 60,
+		"ammo_7.62x54_ap", 90,
+		"ammo_vog-25", 100,
+		"militaryspec_outfit", 1
+}
+--------------------  Для диалога с гоп-стопом Рашпиля ??? но это не точно, для диалога с бойцами Султана по заказу оружия.
+function take_amkaart()
+	local hour = level.get_time_hours()
+	local c=math.floor(hour/4)+1
+	local item=table_amkaart[c]
+	sak.create_items(db.actor, item,1)
+end
+function have_amkaart()
+	for i=1, #table_amkaart do
+		if sak.have_items_count(table_amkaart[i],1) then return true end
+	end
+	return false
+end
+function transfer_amkaart()
+	for i=1, #table_amkaart do
+		if sak.have_items_count(table_amkaart[i],1) then 
+			sak_inventory.release_actor_items(table_amkaart[i],1)
+			break
+		end
+	end
+end
+function have_amkbart()
+	for i=1, #table_amkbart do
+		if sak.have_items_count(table_amkbart[i],1) then return true end
+	end
+	return false
+end
+function transfer_amkbart()
+	for i=1, #table_amkbart do
+		if sak.have_items_count(table_amkbart[i],1) then 
+			sak_inventory.release_actor_items(table_amkbart[i],1)
+			break
+		end
+	end
+end
+function have_amkcart()
+	for i=1, #table_amkcart do
+		if sak.have_items_count(table_amkcart[i],1) then return true end
+	end
+	return false
+end
+function transfer_amkcart()
+	for i=1, #table_amkcart do
+		if sak.have_items_count(table_amkcart[i],1) then 
+			sak_inventory.release_actor_items(table_amkcart[i],1)
+			break
+		end
+	end
+end
+function have_amkdart()
+	for i=1, #table_amkdart do
+		if sak.have_items_count(table_amkdart[i],1) then return true end
+	end
+	return false
+end
+function transfer_amkdart()
+	for i=1, #table_amkdart do
+		if sak.have_items_count(table_amkdart[i],1) then 
+			sak_inventory.release_actor_items(table_amkdart[i],1)
+			break
+		end
+	end
+end
+function take_amkdart()
+	local hour = level.get_time_hours()
+	local c=math.floor(hour/4)+1
+	local item=table_amkdart[c]
+	sak.create_items(db.actor, item,1)
+end
+-------------------- Обмен модификатов у Сидоровича
+function have_amkart()			-- Есть ли модификат из table_amkart у ГГ
+	for i=1, #table_amkart do
+		if sak.have_items_count(table_amkart[i],1) then return true end
+	end
+	return false
+end
+function have_amkart2(art_index)	-- Есть ли модификат table_amkart(art_index) у ГГ
+	if sak.have_items_count(table_amkart[art_index],1) then
+		return true
+	end
+	return false
+end
+
+local transfer_amkart_art = 1		-- В этой переменной, какой модификат выбран ГГ для обмена
+
+function transfer_amkart1(art_index)	-- Запоминаем, какой модификат выбрал ГГ
+	transfer_amkart_art = art_index
+end
+function transfer_amkart2(nagrad_index)	-- Запоминаем, какую награду выбрал ГГ в переменной transfer_amkart_nagrad
+	nlc_vars.transfer_amkart_nagrad = nagrad_index
+end
+function transfer_amkart3()			-- Забираем модификат table_amkart(transfer_amkart_art)
+	sak_inventory.release_actor_items(table_amkart[transfer_amkart_art],1)
+	nlc_vars.transfer_amkart_time = game.get_game_time():diffSec(game.CTime())	-- Запоминаем время заказа (товар должны отдать через 24 часа)
+end
+function transfer_amkart4()			-- Награждаем ГГ из таблицы sidr_nagrad[]
+	local nagrad_index = nlc_vars.transfer_amkart_nagrad*2-1
+	local nagrad_item = sidr_nagrad[nagrad_index]
+	local nagrad_count = sidr_nagrad[nagrad_index+1]
+	sak.create_items(db.actor,nagrad_item,nagrad_count)
+end
+function transfer_amkart4_check_time()			-- Проверяем прошли ли 24 часа, можно ли получать товар
+	if nlc_vars.transfer_amkart_time == nil then	-- Если переменная с временем заказа не проинициализированна (ГГ не делал заказ у Сидора), то товар получить нельзя
+		return false
+	end
+
+	if game.get_game_time():diffSec(game.CTime()) - nlc_vars.transfer_amkart_time > 24*60*60 then
+		return true				-- 24 часа прошли, товар получить можно
+	end
+	return false
+end
+function not_transfer_amkart4_check_time()
+	return not transfer_amkart4_check_time()
+end
+
+-------------------- Для диалога по скафандру для Ивара ??? но это не точно.
+function take_amkdart()
+	local hour = level.get_time_hours()
+	local c=math.floor(hour/4)+1
+	local item=table_amkdart[c]
+	sak.create_items(db.actor, item,1)
+end
+
+local nagrad = {
+-------------------- Обмен на артефакты у Сидоровича
+	level_4 = {
+		"grenade_f1",25,
+		"ammo_9x39_pab9",10,
+		"ammo_9x39_ap",10,
+		"ammo_5.45x39_ap",20,
+		"ammo_5.56x45_ap",20,
+		"ammo_7.62x39_ap",15,
+		"ammo_og-7b",10,
+		"ammo_m209",25,
+		"ammo_vog-25p",25,
+		"medkit_army",15,
+		"medkit_scientic",10,
+		"antirad",15},
+
+-------------------- Обмен на артефакты у Бармена
+	level_3 = {
+		"grenade_rgd5",20,
+		"ammo_9x19_pbp",20,
+		"ammo_5.45x39_fmj",20,
+		"ammo_5.45x39_ap",15,
+		"ammo_5.56x45_ap",20,
+		"ammo_5.56x45_ss190",15,
+		"ammo_7.62x39_fmj",10,
+		"ammo_7.62x39_ap",7,
+		"ammo_vog-25p",15,
+		"ammo_m209",15,
+		"medkit_army",10,
+		"antirad",10},
+
+-------------------- Обмен на бензин в Баре
+	level_2 = {
+		"ammo_9x19_pbp",4,
+		"ammo_5.45x39_fmj",5,
+		"ammo_7.62x39_fmj",2,
+		"ammo_12x70_buck",5,
+		"grenade_rgd5",10,
+		"conserva",7,
+		"vodka",5,
+		"medkit_army",3,
+		"antirad",3,
+		"antirad",3,
+		"antirad",3,
+		"antirad",3},
+
+-------------------- Обмен на бензин на Кордоне
+	level_1 = {
+		"ammo_9x18_pmm",5,
+		"ammo_5.45x39_fmj",4,
+		"ammo_7.62x39_fmj",2,
+		"ammo_12x70_buck",5,
+		"ammo_vog-25",3,
+		"conserva",5,
+		"vodka",4,
+		"medkit",7,
+		"antirad",3,
+		"antirad",3,
+		"antirad",3,
+		"antirad",3}
+}
+
+local art_chan_nagrad = {
+	level_3 = {
+	"af_night_star",
+	"af_gold_fish",
+	"af_soul",
+	"af_electra_moonlight",
+	"af_cristall",
+	"af_ameba_mica",
+	"af_rusty_sea-urchin"},
+	level_2 = {
+	"af_cristal_flower",
+	"af_gravi",
+	"af_mincer_meat",
+	"af_electra_flash",
+	"af_fireball",
+	"af_ameba_slug",
+	"af_rusty_kristall"},
+	level_1 = {
+	"af_medusa",
+	"af_vyvert",
+	"af_blood",
+	"af_electra_sparkler",
+	"af_drops",
+	"af_ameba_slime",
+	"af_rusty_thorn"}}
+
+local art_chan_items = nil
+local art_chan_count_offer_1 = 0
+local art_chan_count_offer_2 = 0
+local art_chan_count_offer_3 = 0
+local art_chan_count_offer_4 = 0
+local art_chan_item1 = {}
+local art_chan_item2 = {}
+local art_chan_item3 = {}
+local art_chan_count = {}
+function art_chan_offer_1_yes()
+	return art_chan_offer_1_count()~=false
+end
+function art_chan_offer_1_no()
+	return art_chan_offer_1_count()==false
+end
+function art_chan_offer_2_yes()
+	return art_chan_offer_2_count()~=false
+end
+function art_chan_offer_2_no()
+	return art_chan_offer_2_count()==false
+end
+function art_chan_offer_3_yes()
+	return art_chan_offer_3_count()~=false
+end
+function art_chan_offer_3_no()
+	return art_chan_offer_3_count()==false
+end
+local s3 = lua_random(1,2)
+function art_chan_offer_3_count()
+	if art_chan_count_offer_3<s3 then
+	return true
+	else
+	return false
+	end
+end
+local p2 = lua_random(1,3)
+function art_chan_offer_2_count()
+	if art_chan_count_offer_2<p2 then
+	return true
+	else
+	return false
+	end
+end
+local o1 = lua_random(1,4)
+function art_chan_offer_1_count()
+	if art_chan_count_offer_1<o1 then
+	return true
+	else
+	return false
+	end
+end
+function art_chan_offer_3()
+	art_chan_items1 = lua_random(table.getn(art_chan_nagrad.level_3))
+	art_chan_item1 = art_chan_nagrad.level_3[art_chan_items1]
+	art_chan_items2 = lua_random(table.getn(art_chan_nagrad.level_3))
+	art_chan_item2 = art_chan_nagrad.level_3[art_chan_items2]
+	if art_chan_items1==art_chan_items2 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 2 шт.", "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	else
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." и "..game.translate_string(news_manager.get_inv_name(art_chan_item2)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	end
+
+end
+function art_chan_offer_2()
+	art_chan_items1 = lua_random(table.getn(art_chan_nagrad.level_2))
+	art_chan_item1 = art_chan_nagrad.level_2[art_chan_items1]
+	art_chan_items2 = lua_random(table.getn(art_chan_nagrad.level_2))
+	art_chan_item2 = art_chan_nagrad.level_2[art_chan_items2]
+	if art_chan_items1==art_chan_items2 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 2 шт.", "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	else
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." и "..game.translate_string(news_manager.get_inv_name(art_chan_item2)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	end
+
+end
+function art_chan_offer_1()
+	art_chan_items1 = lua_random(table.getn(art_chan_nagrad.level_1))
+	art_chan_item1 = art_chan_nagrad.level_1[art_chan_items1]
+	art_chan_items2 = lua_random(table.getn(art_chan_nagrad.level_1))
+	art_chan_item2 = art_chan_nagrad.level_1[art_chan_items2]
+	if art_chan_items1==art_chan_items2 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 2 шт.", "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	else
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." и "..game.translate_string(news_manager.get_inv_name(art_chan_item2)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	end
+end
+function art3_chan_offer_3()
+	art_chan_items1 = lua_random(table.getn(art_chan_nagrad.level_3))
+	art_chan_item1 = art_chan_nagrad.level_3[art_chan_items1]
+	art_chan_items2 = lua_random(table.getn(art_chan_nagrad.level_3))
+	art_chan_item2 = art_chan_nagrad.level_3[art_chan_items2]
+	art_chan_items3 = lua_random(table.getn(art_chan_nagrad.level_3))
+	art_chan_item3 = art_chan_nagrad.level_3[art_chan_items3]
+	if art_chan_items1==art_chan_items2 and art_chan_items2==art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 3 шт.", "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	elseif art_chan_items1==art_chan_items2 and art_chan_items2~=art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 2 шт. и "..game.translate_string(news_manager.get_inv_name(art_chan_item3)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	elseif art_chan_items1~=art_chan_items2 and art_chan_items2==art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item2)).." - 2 шт. и "..game.translate_string(news_manager.get_inv_name(art_chan_item1)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	elseif art_chan_items1~=art_chan_items2 and art_chan_items1==art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 2 шт.и "..game.translate_string(news_manager.get_inv_name(art_chan_item2)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	else
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1))..", "..game.translate_string(news_manager.get_inv_name(art_chan_item2)).." и "..game.translate_string(news_manager.get_inv_name(art_chan_item3)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	end
+end
+function art3_chan_offer_2()
+	art_chan_items1 = lua_random(table.getn(art_chan_nagrad.level_2))
+	art_chan_item1 = art_chan_nagrad.level_2[art_chan_items1]
+	art_chan_items2 = lua_random(table.getn(art_chan_nagrad.level_2))
+	art_chan_item2 = art_chan_nagrad.level_2[art_chan_items2]
+	art_chan_items3 = lua_random(table.getn(art_chan_nagrad.level_2))
+	art_chan_item3 = art_chan_nagrad.level_2[art_chan_items3]
+	if art_chan_items1==art_chan_items2 and art_chan_items2==art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 3 шт.", "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	elseif art_chan_items1==art_chan_items2 and art_chan_items2~=art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 2 шт. и "..game.translate_string(news_manager.get_inv_name(art_chan_item3)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	elseif art_chan_items1~=art_chan_items2 and art_chan_items2==art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item2)).." - 2 шт. и "..game.translate_string(news_manager.get_inv_name(art_chan_item1)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	elseif art_chan_items1~=art_chan_items2 and art_chan_items1==art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 2 шт.и "..game.translate_string(news_manager.get_inv_name(art_chan_item2)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	else
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1))..", "..game.translate_string(news_manager.get_inv_name(art_chan_item2)).." и "..game.translate_string(news_manager.get_inv_name(art_chan_item3)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	end
+end
+function art3_chan_offer_1()
+	art_chan_items1 = lua_random(table.getn(art_chan_nagrad.level_1))
+	art_chan_item1 = art_chan_nagrad.level_1[art_chan_items1]
+	art_chan_items2 = lua_random(table.getn(art_chan_nagrad.level_1))
+	art_chan_item2 = art_chan_nagrad.level_1[art_chan_items2]
+	art_chan_items3 = lua_random(table.getn(art_chan_nagrad.level_1))
+	art_chan_item3 = art_chan_nagrad.level_1[art_chan_items3]
+	if art_chan_items1==art_chan_items2 and art_chan_items2==art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 3 шт.", "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	elseif art_chan_items1==art_chan_items2 and art_chan_items2~=art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 2 шт. и "..game.translate_string(news_manager.get_inv_name(art_chan_item3)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	elseif art_chan_items1~=art_chan_items2 and art_chan_items2==art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item2)).." - 2 шт. и "..game.translate_string(news_manager.get_inv_name(art_chan_item1)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	elseif art_chan_items1~=art_chan_items2 and art_chan_items1==art_chan_item3 then
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1)).." - 2 шт.и "..game.translate_string(news_manager.get_inv_name(art_chan_item2)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	else
+	db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(news_manager.get_inv_name(art_chan_item1))..", "..game.translate_string(news_manager.get_inv_name(art_chan_item2)).." и "..game.translate_string(news_manager.get_inv_name(art_chan_item3)), "ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	end
+end
+function offer_1_gg_say_no()
+	art_chan_count_offer_1=art_chan_count_offer_1+1
+end
+function offer_2_gg_say_no()
+	art_chan_count_offer_2=art_chan_count_offer_2+1
+end
+function offer_3_gg_say_no()
+	art_chan_count_offer_3=art_chan_count_offer_3+1
+end
+function art_chan_gg_say_ok()
+	local item1 = art_chan_item1
+	local item2 = art_chan_item2
+	local rand
+	if art_chan_items1==art_chan_items2 then
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item1.."_dyn"..rand.."d",2)
+	else
+	rand=lua_random(1,4)
+	sak.create_items(db.actor,item1.."_dyn"..rand.."d",1)
+	rand=lua_random(1,4)
+	sak.create_items(db.actor,item2.."_dyn"..rand.."d",1)
+	end
+	art_chan_count_offer_1=0
+	art_chan_count_offer_2=0
+	art_chan_count_offer_3=0
+end
+function art3_chan_gg_say_ok()
+	local item1 = art_chan_item1
+	local item2 = art_chan_item2
+	local item3 = art_chan_item3
+	local rand
+	if art_chan_items1==art_chan_items2 and art_chan_items2==art_chan_item3 then
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item1.."_dyn"..rand.."d",3)
+	elseif art_chan_items1==art_chan_items2 and art_chan_items2~=art_chan_item3 then
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item1.."_dyn"..rand.."d",2)
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item3.."_dyn"..rand.."d",1)
+	elseif art_chan_items1~=art_chan_items2 and art_chan_items2==art_chan_item3 then
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item1.."_dyn"..rand.."d",1)
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item3.."_dyn"..rand.."d",2)
+	elseif art_chan_items1~=art_chan_items2 and art_chan_items1==art_chan_item3 then
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item1.."_dyn"..rand.."d",2)
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item2.."_dyn"..rand.."d",1)
+	else	
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item1.."_dyn"..rand.."d",1)
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item2.."_dyn"..rand.."d",1)
+		rand=lua_random(1,4)
+		sak.create_items(db.actor,item3.."_dyn"..rand.."d",1)
+	end
+end
+
+------------------- Обмен канистр на Кордоне
+local add_nagrad_kanistra_esc_nagrad = 0		-- здесь храним, какую награду выбрал ГГ за канистру на Кордоне
+function add_nagrad_kanistra_esc1(nagrad_item)		-- запоминаем, какую награду выбрал ГГ за канистру на Кордоне
+	add_nagrad_kanistra_esc_nagrad = nagrad_item
+end
+function add_nagrad_kanistra_esc2()			-- награждение за канистру на Кордоне
+	local items = nagrad.level_1[add_nagrad_kanistra_esc_nagrad*2-1]
+	local count = nagrad.level_1[add_nagrad_kanistra_esc_nagrad*2]
+	sak.create_items(db.actor,items,count)			-- даем награду
+	sak_dialog.take_2000_money()				-- даем деньги
+	sak_inventory.release_actor_items("amk_kanistra",1)	-- забираем канистру
+	timers.start_timer("timer_kanistra_esc",1,0,0,"sak_rand_nagrad.timer_kanistra_esc_end()")	-- запускаем таймер на 24 часа
+	db.actor:give_info_portion("kanistra_esc_not_over")	-- включаем инфопоршень, что канистр больше не надо (выключится по таймеру)
+end
+function timer_kanistra_esc_end()
+	sak.send_tip("Сталкеры, у нас на Кордоне закончился бензин. Если есть желание заработать, несите канистры, поменяем на патроны, медикаменты, еду, Водку....","Новости Кордона.",11,20,"stalker","sak","green")
+	db.actor:disable_info_portion("kanistra_esc_not_over")	-- выключаем инфопоршень, теперь канистры можно менять.
+end
+
+------------------- Обмен канистр в Баре
+local add_nagrad_kanistra_bar_nagrad = 0		-- здесь храним, какую награду выбрал ГГ за канистру в Баре
+function add_nagrad_kanistra_bar1(nagrad_item)		-- запоминаем, какую награду выбрал ГГ за канистру в Баре
+	add_nagrad_kanistra_bar_nagrad = nagrad_item
+end
+function add_nagrad_kanistra_bar2()			-- награждение за канистру в Баре
+	local items = nagrad.level_2[add_nagrad_kanistra_bar_nagrad*2-1]
+	local count = nagrad.level_2[add_nagrad_kanistra_bar_nagrad*2]
+	sak.create_items(db.actor,items,count)			-- даем награду
+	sak_dialog.take_3000_money()				-- даем деньги
+	sak_inventory.release_actor_items("amk_kanistra",1)	-- забираем канистру
+	timers.start_timer("timer_kanistra_bar",1,0,0,"sak_rand_nagrad.timer_kanistra_bar_end()")	-- запускаем таймер на 24 часа
+	db.actor:give_info_portion("kanistra_bar_not_over")	-- включаем инфопоршень, что канистр больше не надо (выключится по таймеру)
+end
+function timer_kanistra_bar_end()
+	sak.send_tip("Сталкеры, у нас в Баре закончился бензин. Если есть желание заработать, несите канистры, поменяем на патроны, медикаменты, еду, Водку....","Новости Бара.",11,20,"stalker","sak","green")
+	db.actor:disable_info_portion("kanistra_bar_not_over")	-- выключаем инфопоршень, теперь канистры можно менять.
+end
+
+-------------------
+function add_nagrad_3()
+	local hour = level.get_time_hours()
+	while hour>11 do
+	hour=hour-12
+	end
+	local item = (hour+1)*2-1+item_rand
+	if item>24 then item=item-24 end
+	local items = nagrad.level_3[item]
+	local count = nagrad.level_3[item+1]
+		sak.create_items(db.actor,items,count)
+		item_rand=item_rand+2
+end
+function add_nagrad_4()
+	local hour = level.get_time_hours()
+	while hour>11 do
+	hour=hour-12
+	end
+	if item>23 then item=item-24 end
+	local item = (hour+1)*2-1+item_rand
+	local items = nagrad.level_4[item]
+	local count = nagrad.level_4[item+1]
+		sak.create_items(db.actor,items,count)
+		item_rand=item_rand+2
+end
+
+local exchange_item = {
+	"bandage",5,"medkit",1,
+	"bandage",20,"antirad",1,
+	"antirad",1,"medkit_army",1,
+	"medkit",3,"medkit_army",1,
+	"medkit_army",3,"medkit_scientic",1,
+	"medkit_army",1,"medkit",2,
+	"medkit_scientic",1,"medkit_army",2
+	}

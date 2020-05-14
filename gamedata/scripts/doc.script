@@ -1,0 +1,170 @@
+---------------------- igor.doc ----
+-- new_docent_detector
+function docent_krovosos_jaw_have()
+  return sak.have_items_count("mutant_krovosos_jaw",3)~=false
+end
+function give_docent_krovosos_jaw()
+  sak_inventory.release_actor_items("mutant_krovosos_jaw",3)
+end
+function docent_chimera_kogot_have()
+  return sak.have_items_count("mutant_chimera_kogot",3)~=false
+end
+function give_docent_chimera_kogot()
+  sak_inventory.release_actor_items("mutant_chimera_kogot",3)
+end
+function docent_hand_kontroler_have()
+  return sak.have_items_count("mutant_hand_kontroler",2)~=false
+end
+function give_docent_hand_kontroler()
+  sak_inventory.release_actor_items("mutant_hand_kontroler",2)
+end
+function docent_psevdogigant_hand_have()
+  return sak.have_items_count("mutant_psevdogigant_hand",2)~=false
+end
+function give_docent_psevdogigant_hand()
+  sak_inventory.release_actor_items("mutant_psevdogigant_hand",2)
+end
+
+function add_ammo_docent()
+  sak.create_items(db.actor,"ammo_12x76_dart",5)
+  sak.create_items(db.actor,"ammo_12x76_zhekan",5)
+  sak.create_items(db.actor,"ammo_12x70_buck",10)  
+end
+
+local gift_docent = {
+  "ammo_12x70_buck",
+  "ammo_12x76_zhekan",
+  "ammo_12x76_dart",
+  "ammo_vog-25",
+  "antirad",
+  "medkit_scientic"
+  }
+function docent_small_gift()
+  local item = ""
+  local count = lua_random(4,5)
+  for i=1,count do
+  item = gift_docent[lua_random(table.getn(gift_docent))]
+    sak.create_items(db.actor,item,1)
+  end
+end
+function docent_big_gift()
+  local item = ""
+  local count = lua_random(8,10)
+  for i=1,count do
+  item = gift_docent[lua_random(table.getn(gift_docent))]
+    sak.create_items(db.actor,item,1)
+  end
+end
+
+function timer_mutant_docent()
+  local rnd = lua_random(2,3)
+  timers.start_timer("timer_mutant_docent",rnd,12,30,"doc.timer_mutant_docent_end()")
+end
+function timer_mutant_docent_end()
+  sak.send_tip("Меченный, подходи в Бар, есть работа.","Сообщение от Доцента",11,20,"ecolog","sak", "green")
+  db.actor:give_info_portion("info_docent_detector1_message")
+end
+function timer_mutant_docent2()
+  local rnd = lua_random(2,3)
+  timers.start_timer("timer_mutant_docent2",rnd,12,30,"doc.timer_mutant_docent2_end()")
+end
+function timer_mutant_docent2_end()
+  sak.send_tip("Меченный, подходи в Бар, есть работа.","Сообщение от Доцента",11,20,"ecolog","sak", "green")
+  db.actor:give_info_portion("info_docent_detector2_message")
+end
+function timer_mutant_docent3()
+  local rnd = lua_random(2,3)
+  timers.start_timer("timer_mutant_docent3",rnd,12,30,"doc.timer_mutant_docent3_end()")
+end
+function timer_mutant_docent3_end()
+  sak.send_tip("Меченный, подходи в Бар, есть работа.","Сообщение от Доцента",11,20,"ecolog","sak", "green")
+  db.actor:give_info_portion("info_docent_detector3_message")
+end
+function timer_mutant_docent4()
+  local rnd = lua_random(2,3)
+  timers.start_timer("timer_mutant_docent4",rnd,12,30,"doc.timer_mutant_docent4_end()")
+end
+function timer_mutant_docent4_end()
+  sak.send_tip("Меченный, подходи в Бар, есть разговор.","Сообщение от Доцента",11,20,"ecolog","sak", "green")
+  db.actor:give_info_portion("info_docent_detector4_message")
+end
+-- спавним кровососов
+function val_bloodsucker_spawn()
+    local obj1 = alife():create("val_bloodsucker1",sak.v3f(150.477462768555,4.10717010498047,-471.593139648438),349597,948)	
+	level.map_add_object_spot_ser(obj1.id, "crlc_big", "Место обитания кровососа")
+	
+    local obj2 = alife():create("val_bloodsucker2",sak.v3f(150.477462768555,4.10717010498047,-471.593139648438),349597,948)	
+	level.map_add_object_spot_ser(obj2.id, "crlc_big", "Место обитания кровососа")
+	
+    local obj3 = alife():create("val_bloodsucker3",sak.v3f(150.477462768555,4.10717010498047,-471.593139648438),349597,948)	
+	level.map_add_object_spot_ser(obj3.id, "crlc_big", "Место обитания кровососа")
+end
+--убираем метку
+function remove_val_bloodsucker_spot(actor, obj, p)
+	local spot_name = p[ 1 ]
+    amk.remove_spot_from_map( obj:id(), spot_name )
+end
+function mutant_docent_dead()
+  sak.send_tip("Вроде со всеми управился","Вернуться к Доценту",5,15,"g_g","sak","yellow")
+end
+-- спавним химер в Кишке
+function dsc_chimera_spawn()
+    local obj1 = alife():create("dsc_chimera1",sak.v3f(-441.102081298828,-2.3873085975647,-492.609558105469),37133,3940)	
+	level.map_add_object_spot_ser(obj1.id, "crlc_big", "Место обитания химеры")
+	
+    local obj2 = alife():create("dsc_chimera2",sak.v3f(-29.6133575439453,-0.846032381057739,-377.789520263672),356875,4022)	
+	level.map_add_object_spot_ser(obj2.id, "crlc_big", "Место обитания химеры")
+	
+    local obj3 = alife():create("dsc_chimera3",sak.v3f(-225.679351806641,2.9744861125946,496.210021972656),150588,3978)	
+	level.map_add_object_spot_ser(obj3.id, "crlc_big", "Место обитания химеры")	
+end
+function remove_dsc_chimera_spot(actor, obj, p)
+	local spot_name = p[ 1 ]
+    amk.remove_spot_from_map( obj:id(), spot_name )
+end
+-- спавним контролёров на Болотах
+function marsh_controller_spawn()
+    local obj1 = alife():create("marsh_controller1",sak.v3f(81.6500015258789,1.04999995231628,133.600006103516),183414,3455)	
+	level.map_add_object_spot_ser(obj1.id, "crlc_big", "Место обитания контролёра")
+	   
+    local obj2 = alife():create("marsh_controller2",sak.v3f(-33.0999984741211,0.370000004768372,301.390014648438),123528,3402)
+	level.map_add_object_spot_ser(obj2.id, "crlc_big", "Место обитания контролёра")
+end
+function remove_marsh_controller_spot(actor, obj, p)
+	local spot_name = p[ 1 ]
+    amk.remove_spot_from_map( obj:id(), spot_name )
+end
+-- спавним гигантов на Радаре
+function rad_gigant_spawn()
+    local obj1 = alife():create("rad_gigant1",sak.v3f(294.343536376953,-51.3946533203125,-314.971557617188),62833,2073)	
+	level.map_add_object_spot_ser(obj1.id, "crlc_big", "Место обитания гиганта")
+	
+    local obj2 = alife():create("rad_gigant2",sak.v3f(318.046264648438,-47.1529693603516,-307.046966552734),74731,2073)	
+	level.map_add_object_spot_ser(obj2.id, "crlc_big", "Место обитания гиганта")	
+end
+function remove_rad_gigant_spot(actor, obj, p)
+	local spot_name = p[ 1 ]
+    amk.remove_spot_from_map( obj:id(), spot_name )
+end
+
+function take_treasure_docent(first_speaker, second_speaker)
+  local rand=amk_vars.r_task_reward or 1
+  if rand==1 then
+  treasure_manager.get_treasure_manager():give_treasure("dea_secret_0005")  
+  elseif rand==2 then
+  treasure_manager.get_treasure_manager():give_treasure("dea_secret_0004")  
+  elseif rand==3 then
+  treasure_manager.get_treasure_manager():give_treasure("dea_secret_0003")  
+  elseif rand==4 then
+  treasure_manager.get_treasure_manager():give_treasure("dea_secret_0002")  
+  else
+  treasure_manager.get_treasure_manager():give_treasure("dea_secret_0001")  
+  end
+end
+-- mikhalych_item
+function ecolog_device_have()
+  return sak.have_items_count("ecolog_device",2)~=false
+end
+function give_ecolog_device()
+  sak_inventory.release_actor_items("ecolog_device",2)
+end

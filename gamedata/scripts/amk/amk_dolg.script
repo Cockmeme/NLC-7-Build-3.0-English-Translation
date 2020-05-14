@@ -1,0 +1,20 @@
+
+local dolg_news={
+"%c[255,160,160,160]\Duty\\\n%c[default]We've got equipment problems, can't communicate with base and squads for a couple of days.",
+"%c[255,160,160,160]\Duty\\\n%c[default]We don't keep score of anything. Your killings of left-wing men don't interest anyone.",
+"%c[255,160,160,160]\Duty\\\n%c[default]Go to a private channel, download the security update. There's gonna be a leak because someone was too lazy to update. Asshole.",
+"%c[255,160,160,160]\Duty\\\n%c[default]Information on mutant raids and other operations - in the private channel. It hasn't been leaked yet.",
+"%c[255,160,160,160]\Duty\\\n%c[default]Stalkers, join \Duty\. Let's protect the planet from the contagion of the Zone!",	
+"%c[255,160,160,160]\Duty\\\n%c[default]We need experienced stalkers for a raid against snorks. You will be rewarded accordingly.",
+"%c[255,160,160,160]\Duty\\\n%c[default]We need experienced stalkers for a raid against mutants. You will be rewarded accordingly.",
+"%c[255,160,160,160]\Duty\\\n%c[default]We need experienced stalkers for a raid against a mutant lair. You will be rewarded accordingly.",
+--"%c[255,160,160,160]\Duty\\\n%c[default]Petrenko, fucking answer me! What's with the private channel?! Did it fail again? \\n\nPetrenko\\nI hear you. I don't do communications, smartass. It will get fixed, when it gets fixed.",
+"%c[255,160,160,160]Petrenko\\n%c[default]We're having temporary interruptions in the private channel, if anything comes up, PM me.",
+"%c[255,160,160,160]Voronin\\n%c[default]All squads, get in touch now! General gathering is happening on this channel!",
+"%c[255,160,160,160]Petrenko\\n%c[default]I repeat, the passage to the base is strictly allowed only with passes or by my order."
+}
+
+function get_strings()
+	local news=dolg_news[lua_random(table.getn(dolg_news))]
+	return news
+end

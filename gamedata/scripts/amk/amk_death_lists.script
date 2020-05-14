@@ -1,0 +1,70 @@
+
+local dead_reason={
+"\"Springboard\"",
+"\"Burner\"",
+"\"Vortex\"",
+"\"Mosquito Mange\"",
+"\"Electro\"",
+"Shrapnel wound, must have been a serious gunfight.",
+"Boar",
+"Dog",
+"Pseudodog",
+"Bloodsucker",
+"Tushkans",
+"It's not clear what happened. The guy just straight up disintigrated.",
+"Looks like radiation burns.",
+"Completely sliced up, I don't know what the hell it was.",
+"Shot in the head.",
+"Got his arm ripped off by an anomaly. Died of blood loss.",
+"His feet have completly melted. It's a mess. I think he stepped into \"Witch's jelly\."",
+"Shot through the chest.",
+"Shot through the heart, then shot in the head. Probably by mercs...",
+"Blood on the concrete, scraps of the suit, broken PDA. Shit...",
+"Someone was chasing him. Ran into an anomaly.",
+"The nose and ears are bleeding. Looks like the effects of radiation poisoning",
+"No wounds. It's a very strange death.",
+"Got caught in a \"Burner\". I could only identify him by his dropped PDA.",
+"Flattened against the ground. Stepped into a \"Mosquito Mange\"",
+"He didn't know what stuff he was carrying in his backpack. He died of radiation, from radioactive artifacts.",
+"The suit is intact, but it's a mess inside. I don't know what happenned.",
+"Marauders",
+"Ran into marauders",
+"Shot in the leg. Couldn't get back to safety on his own, died of blood loss.",
+"The guy's pale as death. There's a clean hole in his chest...",
+"Damaged the respiratory system, inhaled radioactive crap.",
+"The body has been torn apart and eaten. Looks like blind dogs.",
+"It's all in some kind of slimy shit. Lost without a trace, just found a burnt PDA nearby. I don't know what it was...",
+"Split open his leg, could even see the bone! Died of blood loss.",
+"It's an open fracture. Couldn't leave, lay there for a couple of hours, then he was devoured by something...",
+"Shots fired at point-blank range from the cut. Apparently, it was an ambush by marauders...",
+"Shot in the back of the head",
+"Noticed a bloodsucker leaning over the body. When I killed the creature and came closer, the guy was no longer breathing.",
+"Strange burns all over his body. Doesn't look like from a \"Burner\"...",
+"Hit in the chest... I don't know the exact circumstances of his death.",
+"Found a PDA next to the body. I don't know why the recorder went off, but there's nothing on the tape but half an hour of screaming. There's not a scratch on the guy. Damn it...",
+"Found a cut-up body. There's a knife lying next to it, and it's shivering. What the hell happened here, I have no idea...",
+"Brilliantly polished skeleton in undamaged suit. Rats?",
+"Eaten to the bone. Rats",
+"Both arms broken, neck twisted. Damn, who did this...",
+"Punctured skull",
+"Stitched his shoulder, but we had no bandages. He died of bloodloss."
+}
+
+
+local where_dead={
+"Agroprom",
+"Garbage",
+"\"Rostok\" Factory",
+"Army warehouses",
+"Dark Valley",
+"Yantar",
+"Radar"
+}
+
+function get_strings()
+	local reason=dead_reason[lua_random(table.getn(dead_reason))]
+	local dead=where_dead[lua_random(table.getn(where_dead))]
+	
+
+	return reason,dead
+end

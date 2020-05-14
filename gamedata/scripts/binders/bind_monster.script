@@ -1,0 +1,766 @@
+-----------------------------------------------------------------------------------
+-- Monster binding
+-----------------------------------------------------------------------------------
+local particles={}
+dog_shield=1
+count_spawns = 0
+local bal_tbl = {
+	"af_baloon", "af_baloon_dyn1d", "af_baloon_dyn2d", "af_baloon_dyn3d", "af_baloon_dyn4d", "af_baloon_dyn5d" 
+} -- семья Балончиковых
+
+function bind(obj)
+  local new_binder = generic_object_binder(obj)
+  obj:bind_object(new_binder)
+end
+local game_difficulty = tonumber(level.get_game_difficulty())
+class "generic_object_binder"(object_binder)
+
+function generic_object_binder:__init(obj) super(obj)
+  self.loaded    = false
+  self.chtime    = 0
+  self.last_update = 0
+  self.upd_count = 0
+  self.particles = {}
+  self.last_pos  = vector()
+  self.move_events = 0
+end 
+
+function generic_object_binder:reload(section)
+  object_binder.reload(self, section)
+end
+
+function generic_object_binder:reinit()
+  object_binder.reinit(self)
+  if self.object:clsid()~=CLID_TRADER then
+    self.object:set_patrol_extrapolate_callback(generic_object_binder.extrapolate_callback, self)
+  end
+  db.storage[self.object:id()] = {}
+  self.st = db.storage[self.object:id()]
+  self.object:set_callback(callback.patrol_path_in_point, self.waypoint_callback, self)
+  self.object:set_callback(callback.hit,          self.hit_callback,    self)
+  self.object:set_callback(callback.death,        self.death_callback,  self)
+  self.object:set_callback(callback.use_object,      self.use_callback,  self)
+end
+
+prevent_gulag_registration_for_id=0
+local step = 1
+
+function generic_object_binder:on_move(dist)
+  self.move_events = self.move_events + 1
+  if ( dist > 0.1 ) and ( self.object:alive() ) then -- обработка перемещения живых мобов
+     self:anomaly_evade()
+     local obj = engine_object(self.object:id())
+     if obj then
+        obj:set_schedule(50, 200) -- чтобы почаще обновлялся
+     end
+  end
+end
+
+function generic_object_binder:update(delta)
+  object_binder.update(self, delta)
+  local classid = self.object:clsid()
+  local sfobj   = self.object
+  local sfpos   = sfobj:position()
+  local actor   = db.actor
+  if nil == actor then
+    abort (" db.actor == nil")
+  end   
+
+ 
+  local dist_to_actor = actor:position():distance_to(sfpos)
+  local dist = sfpos:distance_to(self.last_pos)
+
+  if math.abs(dist) > 0.05 then  -- оптимизация обработки перемещений
+     self:on_move(dist)
+     self.last_pos:set(sfpos)
+  end
+
+  if dist_to_actor < 10 and bind_stalker.binder_loops < 100 and not sfobj:is_stalker() then
+     wprintf("[~T].~C0C #WARN:~C07 на переходе застрял монстр ~C0A %s~C07 - отправляется в оффлайн", sfobj:name())
+     misc.force_offline(sfobj:id())
+  end
+
+  if particles[sfobj:id()] and table.getn(particles[sfobj:id()])>0 then
+    for kk,vv in pairs(particles[sfobj:id()]) do
+      table.insert(self.particles,amk_particle.amk_particle(vv))
+      --table.remove(particles[sfobj:id()],kk)
+      particles[sfobj:id()][kk]=nil
+    end
+  end
+  if table.getn(self.particles)>0 then
+    for kk,vv in pairs(self.particles) do
+      if vv:is_finished() then
+        self.particles[kk]=nil
+      else
+        vv:update(delta)
+        if vv.give_dmg and vv.target then
+          if vv:get_pos():distance_to(vv.target:bone_position("bip01_spine"))<1 then
+            local h = hit()
+            h.impulse = 0
+            h.draftsman = vv.target
+            h.direction = vv.dir
+            h:bone("bip01_spine")
+            h.power = lua_random(10,50)/100
+            h.type = hit.strike
+            vv.target:hit(h)
+            h.power = lua_random(10,50)/100
+            h.type = hit.chemical_burn
+            vv.target:hit(h)
+            vv:stop()
+          end
+        end
+      end
+    end
+  end
+  if classid==CLID_TRADER then trade_manager.update(sfobj) end
+
+  if sfobj:alive() then
+    if sfobj:is_talk_enabled() then
+      sfobj:set_tip_text("character_use")
+    else
+      sfobj:set_tip_text("")
+    end
+  else -- dead body usage
+    local disable = true
+    
+    if actor:active_slot() == 0 then
+       local sc = actor:item_in_slot(0):section()
+       if strpos(sc, "knife") then
+           disable = false
+       end
+    end
+    
+    if disable then
+       sfobj:set_tip_text("knife_need")
+    else
+       sfobj:set_tip_text("cut_off_part")
+    end
+    --sfobj:set_tip_text_default()
+  end
+  local act_scheme = db.storage[sfobj:id()].active_section or ""
+  local is_fake = string.find(act_scheme, "mob_fake_death",1,true) or false
+  --[[
+  if sfobj:section()=="zombie_beee" and time_global()>(self.charge_time or 0)+5000 and 3>(self.charges_done or 0) and not is_fake and sfobj.health>0.1 then
+    local target = sfobj:get_enemy() or actor
+    local dist = target:position():distance_to(sfobj:position())
+    if dist < 10 and sfobj:see(target) then
+      local dir=sfobj:direction()
+      local delta=vector():set(sfobj:position()):sub(target:position())
+      local scalarmul=(delta.x*dir.x+delta.z*dir.z)/math.sqrt(delta.x*delta.x+delta.z*delta.z) 
+      if scalarmul < -0.8 then
+        bind_monster.play_particle(sfobj,
+        {
+          obj=sfobj,
+          particle="amk\\zomb_beee",
+          pos=sfobj:bone_position("bip01_head"),
+          dir=amk.sub(target:bone_position("bip01_head"),sfobj:bone_position("bip01_head")),
+          gravity=vector():set(0,-0.01,0),
+          len=10,
+          life_time=2000,
+          give_dmg=true,
+          target=target,
+          sound="monsters\\zombie\\zombie_take_damage_3"
+        })
+        self.charge_time=time_global()
+        self.charges_done=(self.charges_done or 0) + 1
+      end
+    end
+  end
+  ]]
+ 
+  if balance.monsters == nil then
+     balance.load_config()
+  end
+
+  local bconf = balance.monsters -- table balance configuration
+  if bconf == nil then return end
+
+  if classid==CLID_TUSHKANO and sfobj:alive() then
+      local posit = sfobj:position()
+      local enemy = sfobj:best_enemy()
+      if not enemy then return end
+      local posit = posit:distance_to(enemy:position())
+    if posit < bconf.tushkano_dist_attack and sfobj:see(enemy) then
+      if lua_random()<0.25 and not string.find(sfobj:section(),"rat_",1,true) and not string.find(sfobj:section(),"electro_",1,true ) then
+        local h = hit()
+        h.type = hit.chemical_burn
+        h.direction = vector():set(0,0,0)
+        h.power = 0.03+(0.015*game_difficulty)
+        h.impulse = 0
+        h.draftsman = enemy
+        enemy:hit(h)
+      end
+    end
+    end
+  if classid==CLID_POLTERGEIST and sfobj:alive() then
+     local posit = sfobj:position()
+     local enemy = sfobj:best_enemy()
+    if enemy and posit:distance_to(enemy:position()) < 3 and sfobj:see(enemy) then
+      charge_tushkano(sfobj)
+    end
+  end
+  if classid==CLID_DOG and sfobj:alive() and sfobj.health>0.05 then
+    local npc=sfobj:get_enemy()
+    if npc and npc:id()==actor:id() then
+      if sfobj:see(npc) then
+        if sak.arts_operate==true and sak_inventory.belt_items["af_dummy_fire"]
+        and dist_to_actor < bconf.dog_dist_panic then
+            sfobj:set_custom_panic_threshold(1)
+        else
+            sfobj:set_custom_panic_threshold(0.1)
+        end
+      end
+    end
+  end
+  --[[ if (classid==CLID_CAT or classid==CLID_BLOODSUCKER) and sfobj:alive() and sfobj.health>0.05 then
+     local npc=sfobj:get_enemy()
+     if npc and npc:id()==actor:id() then
+       if sfobj:see(npc) then 
+         if npc:active_slot()==0 and npc:see(sfobj)
+         and dist_to_actor < 6 then
+             sfobj:set_custom_panic_threshold(1)
+         else
+             sfobj:set_custom_panic_threshold(0)
+         end
+       end
+     end
+   end--]]
+
+  if classid==CLID_BLOODSUCKER and sfobj:alive() and sfobj.health>0.05 then
+    local npc=sfobj:get_enemy()
+	local active_baloon = baloon_on_belt()  -- кто из семьи Балончиковых на поясе
+    if npc and npc:id()==actor:id() then
+      if sfobj:see(npc) then 
+        if sak.arts_operate == true and active_baloon ~= "none" and npc:see(sfobj)
+        and dist_to_actor < 8 then
+            sfobj:set_custom_panic_threshold(1)
+            arc_arts.discharge_art_on_belt(active_baloon, 0.001)
+        else
+            sfobj:set_custom_panic_threshold(0)
+        end
+      end
+    end
+  end
+
+  if classid==CLID_PSEUDODOG and sfobj:alive() and sfobj.health>0.05 then
+    local npc=sfobj:get_enemy()
+    if npc and npc:id()==actor:id() then
+            -- вероятность сбивания прицела 50%, в случае если ГГ целит конкретно в эту собаку
+      if sfobj:see(npc) and lua_random() < bconf.psevdodog_divert_prob and wpn_params.get_zie_obj() and db.actor:see(sfobj) then
+         level.add_pp_effector("zevok.ppe", 2021, false)
+         local dir=device().cam_dir
+         local coor_x=dir.x-((0.5-lua_random())/5)
+         local coor_y=dir.y-((0.5-lua_random())/7)
+         local coor_z=dir.z-((0.5-lua_random())/5)
+         params.set_direction(coor_x,coor_y,coor_z)
+         return
+      end
+    end
+  end
+  if classid==CLID_BOAR then
+    if step==1 then
+      local npc=db.actor
+      if npc and dist_to_actor < bconf.boar_radiation_dist then
+        local snd_rand=lua_random(1,4)
+        sak.snd_rand_geiger(snd_rand)
+        local h = hit()
+        h.type = hit.radiation
+        h.power = 0.0005+(0.0002*game_difficulty)+0.008*(sak.dog_psy)
+        h.impulse = 0.0
+        h.draftsman = sfobj
+        h.direction = sfobj:direction()
+        npc:hit(h)
+      end
+      step=2
+    else
+      step=1
+    end
+    return
+  end
+  local blowout = amk_vars.blowout or 0
+  if blowout==3 and (not self.control_override) then
+    if not sfobj:action() then
+      xr_logic.mob_capture(sfobj,true)
+      self.control_override=true
+    end
+  elseif self.control_override and blowout==3 then
+    if not sfobj:action() then
+      local snds={sound.take_damage,sound.panic,sound.idle}
+      local snd=snds[lua_random(1,table.getn(snds))]
+      action(sfobj, anim(anim.lie_idle, 0), sound(snd), cond(cond.sound_end))
+    end
+  elseif self.control_override and blowout~=3 then
+    self.control_override=nil
+    xr_logic.mob_release(sfobj)
+  elseif self.st.active_section~=nil then
+    xr_logic.issue_event(sfobj, self.st[self.st.active_scheme], "update", delta)
+  end
+  if self.chtime<time_global() then
+    self.chtime=time_global()+1513
+    if classid==CLID_DOG and sfobj:alive() and sfobj.health>0.05 then
+    local npc=sfobj:get_enemy()
+      if npc and npc:id()==actor:id() then
+        if sfobj:see(npc) then
+          if lua_random()<sak.dog_psy and dist_to_actor < bconf.dog_dist_attack then
+            level.add_pp_effector("radiation.ppe", 2012, false)
+            local h = hit()
+            h.type = hit.telepatic
+            h.power = 0.01+0.01*sak.dog_psy
+            h.impulse = 0.0
+            h:bone("bip01_spine")
+            h.draftsman = sfobj
+            h.direction = sfobj:direction()
+            npc:hit(h)
+            local drop=(0.05+(0.03*game_difficulty))*dog_shield
+            if lua_random()<drop then
+            local active_item = npc:active_item()
+              if active_item and active_item:section()~="bolt" then
+                npc:drop_item(active_item)
+              end
+            end
+          end
+          return
+        end
+      end
+    end
+    if classid==CLID_TUSHKANO and sfobj:alive() then
+    local posit = sfobj:position()
+    local enemy = sfobj:best_enemy()
+    if not enemy then return end
+      local posit = posit:distance_to(enemy:position())
+      if posit < 2 and sfobj:see(enemy) then
+        if sfobj:section()=="electro_tushkano_normal" then
+          charge_tushkano(sfobj)
+        end
+        return
+      end
+    end
+    if classid==CLID_CONTROLLER and sfobj:alive() then
+      local npc=sfobj:get_enemy()
+      if npc then
+        --[[if npc:id()~=actor:id() and npc:clsid()==CLID_STALKER and sfobj:see(npc) and npc:character_community()~="zombied" and npc:story_id()==NONE_CL_SID and sfobj:position():distance_to(npc:position())<30 then
+          local sobj=alife():object(npc:id())
+          if sobj and sobj.online then
+            local zomb=xray_vars.load_table(amk_vars, "zombies", {})
+            zomb[sobj.id]={master=sfobj:id(),comm=npc:character_community(),gw=npc:goodwill(actor)}
+            amk_vars.zombies",zomb)
+                                    
+            npc:set_character_community("zombied",0,0)
+            local pk = get_netpk(sobj)
+            local data = pk:get()
+            if (not string.find(data.character_profile,"_zombi",1,true)) then
+              data.character_profile=data.character_profile.."_zombi"
+            end
+            pk:set(data)
+          end
+          return
+        end--]]
+        if npc:id()==actor:id() then
+          if sfobj:see(npc) or dist_to_actor<60 then
+          --level.add_pp_effector("zevok.ppe", 2021, false)
+            if lua_random()<0.5 then
+            local dir=device().cam_dir
+            local coor_x=dir.x-(1.5-3*lua_random())
+            local coor_y=dir.y
+            local coor_z=dir.z-(1.5-3*lua_random())
+            params.set_direction(coor_x,coor_y,coor_z)
+            return
+            else
+            sak.start_fire()
+            return
+            end
+          end
+        end
+      end
+    end
+    
+    if classid==CLID_CAT and sfobj:alive() and sfobj.health>0.05 then
+      local npc=sfobj:get_enemy()
+      if npc and npc:id()==actor:id() then
+        if sfobj:see(npc) then 
+          if lua_random() < bconf.cat_attack_prob +(0.05*game_difficulty) then
+             level.add_pp_effector("black_cats.ppe", 2015, false)
+             sleep_manager.zevota()
+             if sak.arts_operate == true and sak_inventory.belt_items["af_medus_new"] then
+              sleep_manager.add_sleepiness(7)
+              arc_arts.discharge_art_on_belt("af_medus_new", 0.005)
+             else
+             sleep_manager.add_sleepiness(17)
+             end
+             return
+          end
+        end
+      end
+    end
+    if classid==CLID_ZOMBIE and sfobj:alive() and sfobj.health>0.05 then
+      local npc=sfobj:get_enemy()
+      if npc and npc:id()==actor:id() then
+        if sfobj:see(npc) and dist_to_actor < bconf.starv_dist_attack and lua_random()<0.2+(0.1*game_difficulty) then
+          if lua_random()<0.4 then 
+          local snd_obj
+          local sound="monsters\\zombie\\zombi_attack2"
+          snd_obj=xr_sound.get_safe_sound_object(sound)
+          snd_obj:play_no_feedback(npc, sound_object.s2d, 0, vector(), 5.0)
+          local level_vol=0.1
+          level.set_snd_volume(level_vol)
+          end
+          params.satiety_add(-0.1)
+          if sak.arts_operate == true and sak_inventory.belt_items["af_flower_new"] then
+            if db.actor.satiety < 0.1 then
+              actor_params.cond_prop("satiety", 0.1)
+              arc_arts.discharge_art_on_belt("af_flower_new", 0.001)
+            end
+          end
+          return
+        end
+      end
+    end
+    if classid==CLID_BLOODSUCKER and sfobj:alive() and sfobj.health>0.05 then
+      local npc=sfobj:get_enemy()
+      if npc and npc:id()==actor:id() then
+        if sfobj:see(npc) and dist_to_actor<15 and lua_random()<0.5 then
+          local snd_obj
+          local sound="monsters\\bloodsucker\\bloodsucker_attack"
+          snd_obj=xr_sound.get_safe_sound_object(sound)
+          snd_obj:play_no_feedback(npc, sound_object.s2d, 0, vector(), 5.0)
+          local h = hit()
+          h.type = 7
+          h.direction = vector():set(0,0,0)
+          h.power = 0.05+(0.02*game_difficulty)
+          h.impulse = 0
+          h.draftsman = npc
+          npc:hit(h)
+          h.type = 3
+          npc:hit(h)
+          return
+        end
+      end
+    end
+    if classid==CLID_CHIMERA and sfobj:alive() and sfobj.health>0.5 then
+      local npc=sfobj:get_enemy()
+      if npc and npc:id()==actor:id() then
+        if sfobj:see(npc) and dist_to_actor < 15 and lua_random()<0.5 then
+          local snd_obj
+          local sound="monsters\\chimera\\attack_2"
+          
+          --params.power_health_add(0.01)
+          if sak.arts_operate == true and sak_inventory.belt_items["af_star_new"] and lua_random()<0.66 then
+              arc_arts.discharge_art_on_belt("af_star_new", 0.005)
+              --sak.send_tip("Сработало.", "Тест", 11, 20, nil, "news", "green")
+             else
+             snd_obj=xr_sound.get_safe_sound_object(sound)
+             snd_obj:play_no_feedback(npc, sound_object.s2d, 0, vector(), 5.0)
+             params.power_health_add(0.05)
+          end
+          return
+        end
+      end
+    end
+  end
+  --[[if IsMonster(sfobj) and time_global() - self.last_update > 1000 and not is_fake then
+    if sfobj:alive() and sfobj.health>0.03 then
+      if sfobj:see(actor) and actor:position():distance_to(sfobj:position())<40 then
+        amk.enemy_see_actor(sfobj,"monster") 
+      end
+      if actor:see(sfobj) and actor:position():distance_to(sfobj:position())<80 then 
+        amk.actor_see_enemy(sfobj,"monster") 
+      end
+    end
+    self.last_update = time_global()
+  end--]]
+  
+end
+
+function generic_object_binder:anomaly_evade()
+  local npc = self.object
+  local sid = npc:story_id()
+  if sid == 29 or sid == 3  or sid == 9530 then return end
+
+  if not self.prev_pos then
+    self.prev_pos  = vector():set(0, 5000, 0)
+    self.prev_dist = 0
+  end
+
+  local pos  = npc:position()
+  local dist = self.prev_pos:distance_to(pos) 
+    
+  if dist > 15 then -- объект перешел в новую область, надо обновить ему аномальные рестрикторы
+    self.prev_pos:set(pos)
+    local list  = amk_anoms.get_anomaly_list(npc, 40)
+    local count = 0
+    local dump  = " "
+    for i, o in ipairs(list) do
+      amk_anoms.add_restriction (npc ,o.id, o.name)
+      dump = dump .. DumpVar(o.name) .. " "
+      count = count + 1
+    end
+        
+  --[[
+    wprintf(" anomaly_evade called for~C0A %-35s~C07 added restrictions~C0D %d~C07:\n~C0F %s~C07, move_events =~C0D %d~C07, dist from last~C0D %.1f~C07",
+                                   npc:name(), count, dump, self.move_events, dist)
+  --]]
+  elseif dist ~= self.prv_dist and dist < 20 then
+    self.prv_dist = dist
+    -- wprintf(" ~C0A %-35s~C07 dist to previuos position = ~C0D %.3f ~C07", npc:name(), dist)
+  end
+  if amk_anoms.have_pending_sync(npc) then
+     amk_anoms.synchronize(npc)
+  end
+end
+
+function generic_object_binder:extrapolate_callback()
+  if (self.object==nil) then
+    return false
+  end
+  local cur_pt = self.object:get_current_point_index()
+    if self.object:get_script()  == false then 
+      return false
+    end    
+  if patrol(self.object:patrol()):flags(cur_pt):get()==0 then
+    return true
+  end
+  return false
+end
+
+function generic_object_binder:waypoint_callback(obj, action_type, index)
+  if self.st.active_section~=nil then
+    xr_logic.issue_event(self.object, self.st[self.st.active_scheme], "waypoint_callback", obj, action_type, index)
+  end
+end
+
+function generic_object_binder:death_callback(victim, who)
+  if (self.object==nil) then return end
+  if who:id()==db.actor:id() then
+    xr_statistic.addKillCount(self.object)
+    local section=victim:section()
+    if string.find(section, "controller",1,true) then
+      arc_diary.monster_killed(victim,who)
+    end
+    if string.find(section, "burer_",1,true) then
+      sak_dialog.on_burer_kill(victim,who)
+    end
+    if string.find(section, "flesh_strong",1,true) then
+      sak_dialog.on_flesh_strong_kill(victim,who)
+    end
+    if string.find(section, "boar_",1,true) then
+      sak_dialog.on_boar_kill(victim,who)
+    end
+    if string.find(section, "chimera_",1,true) then
+      sak_dialog.on_chimera_kill(victim,who)
+    end
+  end
+  if self.st.mob_death then
+    xr_logic.issue_event(self.object, self.st.mob_death, "death_callback", victim, who)
+  end
+  if self.st.active_section then
+    xr_logic.issue_event(self.object, self.st[self.st.active_scheme], "death_callback", victim, who)
+  end
+  smart_terrain.on_death(self.object:id())
+  local h = hit()
+  h.draftsman = self.object
+  h.type = hit.fire_wound
+  h.direction = db.actor:position():sub(self.object:position())
+  h:bone("pelvis")
+  h.power = 1
+  h.impulse = 10
+  self.object:hit(h)
+  --[[local mob=self.object
+  if mob:clsid()==CLID_CONTROLLER then
+    local zomb=--------! amk_vars.zombies or !---- {}
+    for k,v in pairs(zomb) do
+      if v.master==mob:id() then
+        if amk_mod.dezombify(k,v) then
+          zomb[k]=nil
+        end
+      end
+    end
+    amk_vars.zombies",zomb)
+  end  --]]
+  
+  if table.getn(self.particles)>0 then
+    for kk,vv in pairs(self.particles) do
+      vv:on_death()
+    end
+  end
+  amk.on_death(victim, who)
+	if rx_ai then rx_ai.monster_death(victim, who) end
+	-- для xr_kamp от ДиШа
+    xr_kamp.on_death(victim, who)
+end
+
+function generic_object_binder:hit_callback(obj, amount, local_direction, who, bone_index)
+  if amount<0.015 then return end
+  amk.on_monster_hit(obj, amount, local_direction, who, bone_index)
+  if self.st.active_section then
+    xr_logic.issue_event(self.object, self.st[self.st.active_scheme], "hit_callback", obj, amount, local_direction, who, bone_index)
+  end
+  if self.st.hit then
+    xr_logic.issue_event(self.object, self.st.hit, "hit_callback", obj, amount, local_direction, who, bone_index)
+  end
+  if bone_index==14 and string.find(obj:section(),"bloodsucker",1,true) then
+    local h=hit()
+    h.type = hit.fire_wound
+    h.power = 100*local_direction.x*local_direction.x*local_direction.x*local_direction.x
+    h.impulse = h.power
+    h.draftsman = who
+    h.direction = vector():set(0,-1,0)
+    obj:hit(h)
+  end
+    
+ 
+  if obj:section()=="electro_chimera" and time_global()>(self.charge_time or 0)+3000 then
+    amk_particle.amk_particle({particle="anomaly2\\electra2_blast",pos=obj:bone_position("bip01_spine"),sound="anomaly\\electra_blast1"})
+    local dist = db.actor:position():distance_to(obj:bone_position("bip01_spine"))
+    if dist < 10 then
+      local h = hit()
+      h.impulse = 0
+      h.draftsman = db.actor
+      h.direction = vector():set(0,0,0)
+      h.power = 0.5/dist
+      h.type = hit.strike
+      db.actor:hit(h)
+      h.power = 2/dist
+      h.type = hit.shock
+      db.actor:hit(h)
+    end
+    self.charge_time=time_global()
+  end
+end
+function generic_object_binder:use_callback(obj, who)
+  if self.object==nil then return end
+  if not self.object:alive() then
+    if who:id()==0 then
+            local actor = db.actor      
+      if actor:active_slot() ~= 0 or 
+               ( not strpos(  actor:item_in_slot(0):section(), "knife" ) ) then
+        params.set_obj_usable(obj:id(), false)
+      else
+        params.set_obj_usable(obj:id(), true)
+      end
+    end
+  end
+end
+
+
+
+function generic_object_binder:net_spawn(sobject)
+  if not object_binder.net_spawn(self, sobject) then
+    return false
+  end
+    count_spawns = count_spawns + 1
+    if count_spawns % 1000 == 0 then
+       level.set_load_title(sprintf("count_spawns = %d", count_spawns))
+    end
+ 
+  db.add_obj(self.object)
+  xr_gulag.setup_gulag_and_logic_on_spawn(self.object, self.st, sobject, modules.stype_mobile, self.loaded)
+  amk.on_net_spawn(self.object)
+  local particle_param = utils.cfg_get_string(system_ini(), self.object:section(), "bones_particles", null, false, false, nil)
+  if particle_param and system_ini():section_exist(particle_param) then
+    local tmp=amk.parse_ini_section_to_array(system_ini(),particle_param)
+    for k,v in pairs(tmp) do
+      local t = amk.parse_ini_section_to_array(system_ini(), v)
+      t.obj = self.object
+      if not t.stop_on_death or self.object:alive() then
+        play_particle(self.object, t)
+      end
+    end
+  end
+  return true
+end
+
+function generic_object_binder:net_destroy()
+  if table.getn(self.particles)>0 then
+    for kk,vv in pairs(self.particles) do
+      if not vv:is_finished() then
+        vv:stop()
+        self.particles[kk]=nil
+      end
+    end
+  end
+  amk.on_monster_go_offline(self.object)
+  self.object:set_callback(callback.death,        nil)
+  self.object:set_callback(callback.patrol_path_in_point, nil)
+  self.object:set_callback(callback.hit,          nil)
+  local st = db.storage[self.object:id()]
+  if st and st.active_scheme then
+    xr_logic.issue_event(self.object, st[st.active_scheme], "net_destroy")
+  end
+  db.del_obj(self.object)
+  db.storage[self.object:id()] = nil
+  local id=self.object:id()
+  object_binder.net_destroy(self)
+  local sobj=alife():object(id)
+  if sobj and IsMonster(sobj) then
+    local pk = get_netpk(sobj)
+    local data = pk:get()
+    data.dynamic_in_restrictions = {}
+    pk:set(data)
+  end
+end 
+
+function generic_object_binder:reload(section)
+  object_binder.reload(self, section)
+end
+
+function generic_object_binder:net_save_relevant()
+  return true
+end
+
+function generic_object_binder:save(packet)
+  object_binder.save(self, packet)
+  xr_logic.save_obj(self.object, packet)
+  if self.object:clsid()==CLID_TRADER then
+    trade_manager.save(self.object, packet)
+  end
+end
+
+function generic_object_binder:load(reader)
+  self.loaded = true
+  object_binder.load(self, reader)
+
+  --[[if reader:r_eof() then
+    abort("SAVE FILE IS CORRUPT "..self.object:name())
+  end--]]
+
+  xr_logic.load_obj(self.object, reader)
+  if self.object:clsid()==CLID_TRADER then
+    trade_manager.load(self.object, reader)
+  end
+end
+
+function play_particle(obj,params)
+  if not particles[obj:id()] then
+    particles[obj:id()]={}
+  end
+  table.insert(particles[obj:id()],params)
+end
+local tushkano_particle = particles_object("anomaly2\\electra_entrance_big")
+local tushkano_sound = sound_object([[monsters\tushkano\tushkano_spark]])
+function charge_tushkano(p_obj)
+  if p_obj then
+    local posit = p_obj:position()
+    local enemy = p_obj:best_enemy()
+    if not tushkano_particle:playing() then tushkano_particle:play_at_pos(p_obj:position()) end
+    if not tushkano_sound:playing() then tushkano_sound:play_at_pos(p_obj, p_obj:position(), 0)
+      local zh = hit()
+      zh.draftsman = enemy
+      zh.type = hit.shock
+      zh.direction = p_obj:position():sub(enemy:position())
+      zh:bone("pelvis")
+      zh.power = 0.075+(0.025*game_difficulty)
+      zh.impulse = 0.05
+      enemy:hit(zh)
+    end
+  end
+end
+
+-- балончик, а балончик? есть ли ты на поясе?
+function baloon_on_belt()
+	for _, k in ipairs( bal_tbl ) do
+		if sak_inventory.belt_items[ k ] then
+       		return k
+        end
+	end
+	return "none"
+end

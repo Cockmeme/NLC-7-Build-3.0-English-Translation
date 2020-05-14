@@ -1,0 +1,15 @@
+
+local freedom_news={
+%c[255,160,160,160]\Freedom\\\n%c[default]Long live \Freedom\! Let's make the world a better place with the Zone!,
+%c[255,160,160,160]\Freedom\\\n%c[default]Join \Свободу\! Stop the exploitation of the Zone!,
+%c[255,160,160,160]\Freedom\\\n%c[default]We need experienced stalkers to hunt for artifacts. We'll owe you one.,
+%c[255,160,160,160]\Freedom\\\n%c[default]Loners! This is \Freedom\! If you want to live in normal conditions in the Zone and without an obligation to the military, like \Duty\ - join us! We always welcome new faces.,
+%c[255,160,160,160]\Freedom\\\n%c[default]All of us - move to the private channel, quickly! Update your security. Then don't complain, that \Duty\ found out about your raid.,
+%c[255,160,160,160]\Freedom\\\n%c[default]If you are on a mission, all information should be sent through a private channel. Don't be fooled - this channel isn't being read just by us.,
+%c[255,160,160,160]\Freedom\\\n%c[default]Data on the measurements of movement are to be immediately sent to me in private, this is really important.
+}
+
+function get_strings()
+	local news=freedom_news[lua_random(table.getn(freedom_news))]
+	return news
+end
