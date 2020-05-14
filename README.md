@@ -264,6 +264,8 @@ ui_st_pda.xml                         Awaiting revision
 
 ***SCRIPTS***
 
+NOTE: Aside from the AMK scripts which have lists, the text that needs to be translated is usually after "sak_send.tip". Use the search function in the editor to find the lines to translate.
+
 allcore\allcore_hide.script
 
 alpet\dlc_manager.script
@@ -280,7 +282,7 @@ amk\amk_offline_alife.script
 
 amk\amk_uniq_news_lists.script
 
-amk\UNDONE amk_death_lists.script
+amk\amk_death_lists.script
 
 arts\amk_uniq_news_lists.script
 
@@ -322,3 +324,6 @@ gps_habar.script
 
 mike.script
 
+***TEXTURES***
+
+So far, only ui_vergas_zayaz and ui_watch_part have been translated. Every texture uploaded has text in them. Not all of them are required to be translated. The main focus should be on the UI elements, the plot-important textures (computer screens in fx). There are some other textures that appear in the game included, but they serve no further purpose other than atmosphere. These may be left alone. However, for the sake of providing a high quality translation, the loading screens with the information on mutants and artifacts should be translated.
