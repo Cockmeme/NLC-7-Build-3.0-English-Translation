@@ -2,20 +2,20 @@
 <string_table>
 <string id="kb_active_jobs"><text>Active tasks in PDA</text></string>
 <string id="kb_always_run"><text>Low crouch</text></string>
-<string id="kb_artefact"><text>Artifact</text></string>
+<string id="kb_artefact"><text>Take off/wear mask</text></string>
 <string id="kb_backward"><text>Back</text></string>
 <string id="kb_binoculars"><text>Binoculars</text></string>
 <string id="kb_buy_menu"><text>Buy menu</text></string>
 <string id="kb_chat"><text>chat</text></string>
 <string id="kb_chat_team"><text>team chat</text></string>
-<string id="kb_console"><text>Cibsike</text></string>
+<string id="kb_console"><text>Console</text></string>
 <string id="kb_contacts"><text>PDA contacts</text></string>
 <string id="kb_crouch"><text>Crouch</text></string>
-<string id="kb_crouch_toggle"><text>Always crouch/text></string>
+<string id="kb_crouch_toggle"><text>Always crouch</text></string>
 <string id="kb_down"><text>Down</text></string>
 <string id="kb_drop"><text>Drop</text></string>
 <string id="kb_fire"><text>Fire</text></string>
-<string id="kb_firemode_next"><text>next firing mode</text></string>
+<string id="kb_firemode_next"><text>Next firing mode</text></string>
 <string id="kb_firemode_prev"><text>Previous firing mode</text></string>
 <string id="kb_forward"><text>Forward</text></string>
 <string id="kb_func"><text>Grenade launcher</text></string>
@@ -23,7 +23,7 @@
 <string id="kb_grp_direction"><text>Direction</text></string>
 <string id="kb_grp_inventory"><text>Inventory</text></string>
 <string id="kb_grp_movement"><text>Movement</text></string>
-<string id="kb_grp_multiplayer"><text>NLC doesn't have a multiplayer</text></string>
+<string id="kb_grp_multiplayer"><text>NLC does not support multiplayer</text></string>
 <string id="kb_grp_weapons"><text>Weapon</text></string>
 <string id="kb_inventory"><text>Inventory</text></string>
 <string id="kb_jump"><text>Jump</text></string>
@@ -32,7 +32,7 @@
 <string id="kb_left_strafe"><text>Strafe left</text></string>
 <string id="kb_map"><text>PDA map</text></string>
 <string id="kb_next_slot"><text>Weapon in next slot</text></string>
-<string id="kb_night_vision"><text>Night Vision</text></string>
+<string id="kb_night_vision"><text>Night vision</text></string>
 <string id="kb_pause"><text>Pause</text></string>
 <string id="kb_pda"><text>PDA</text></string>
 <string id="kb_prev_slot"><text>Weapon in previous slot</text></string>
@@ -42,11 +42,11 @@
 <string id="kb_right"><text>Right</text></string>
 <string id="kb_right_lookout"><text>Lean right</text></string>
 <string id="kb_right_strafe"><text>Strafe right</text></string>
-<string id="kb_scores"><text>Drop the backpack</text></string>
+<string id="kb_scores"><text>Drop backpack</text></string>
 <string id="kb_screenshot"><text>Screenshot</text></string>
-<string id="kb_skin_menu"><text>Use a power tool</text></string>
+<string id="kb_skin_menu"><text>Use power tool</text></string>
 <string id="kb_sprint"><text>Sprint</text></string>
-<string id="kb_team_menu"><text>Pat on your pockets</text></string>
+<string id="kb_team_menu"><text>Pat pockets</text></string>
 <string id="kb_torch"><text>Flashlight</text></string>
 <string id="kb_turn_engine"><text>Turn on</text></string>
 <string id="kb_up"><text>Up</text></string>
@@ -69,8 +69,7 @@
 <string id="kb_setka_on"><text>Switch the illumination/scope gradation</text></string>
 <string id="kb_kick"><text>Kick</text></string>
 <string id="speech_menu_group"><text>Equipment</text></string>
-
-<string id="speech_menu_personal"><text>Voice mail (2)</text></string>
+<string id="speech_menu_personal"><text>Voice messages (2)</text></string>
 <string id="kb_cam_1"><text>First-person view</text></string>
 <string id="kb_cam_2"><text>Third-person view</text></string>
 <string id="kb_cam_3"><text>Third-person view (freelook)</text></string>

@@ -26,7 +26,7 @@
 <string id="st_rank_veteran"><text>Veteran</text></string>
 <string id="st_team_deathmatch"><text>NLC7</text></string>
 <string id="testers_mp_agroprom"><text>Агропром</text></string>
-<string id="testers_mp_atp"><text>АТП</text></string>
+<string id="testers_mp_atp"><text>Vehicle station</text></string>
 <string id="testers_mp_darkvalley"><text>Тёмная долина</text></string>
 <string id="testers_mp_factory"><text>Фабрика "Янтарь"</text></string>
 <string id="testers_mp_lost_village"><text>Покинутая деревня</text></string>
@@ -50,7 +50,7 @@
 <string id="ui_mm_crosshair_distance"><text>Show crosshair distance</text></string>
 <string id="ui_mm_delete"><text>Delete</text></string>
 <string id="ui_mm_default_pool"><text>Load textures in video memory</text></string>
-<string id="ui_mm_difficulty"><text>All settings work only at the Novice difficulty!</text></string>
+<string id="ui_mm_difficulty"><text>All settings work only on the Novice difficulty!</text></string>
 <string id="ui_mm_disconnect"><text>Disconnect</text></string>
 <string id="ui_mm_disconnect_message"><text>Do you really want to disconnect?</text></string>
 <string id="ui_mm_dyn_crosshair"><text>Dynamic crosshair</text></string>

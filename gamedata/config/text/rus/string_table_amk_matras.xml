@@ -18,11 +18,11 @@
 
 <string id="amk_matras"><text>Sleeping bag</text></string>
 <string id="amk_matras_s"><text>Sleeping bag</text></string>
-<string id="enc_amk_matras"><text>A traveling sleeping bag. Perhaps the most convenient way to spend the night in the Zone. It won't save you from radiation, but it will protect you from rain.</text></string>
+<string id="enc_amk_matras"><text>Hiking sleeping bag. Perhaps the most convenient way to spend the night in the Zone. It will not save from radiation, but it will protect from rain.</text></string>
 
 <string id="amk_ruksak"><text>Small backpack</text></string>
 <string id="amk_ruksak_s"><text>Small backpack</text></string>
-<string id="enc_amk_ruksak"><text>A little camping backpack. It's made of rubberized fabric, so it doesn't get wet. You may use it to store valuables in a secret place. It makes for a good stash.</text></string>
+<string id="enc_amk_ruksak"><text>A small hiking backpack. It is made of rubberized fabric, therefore it does not get wet. In this, you can store valuables somewhere in a secluded place - the cache will be excellent.</text></string>
 
 <!-- 23:52 23.06.2007 -->
 
