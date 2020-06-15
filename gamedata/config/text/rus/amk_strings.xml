@@ -138,7 +138,7 @@
     
 <string id="enc_amk_recipt_souls_fire_text"><text>\n \nMeso-modificate "Fiery Soul" which is effective against heat and improves health, is produced from the \n%c[green]"Soul Droplet"%c[default] modificate\nby transmuting it in an %c[UI_orange]"Electra"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour%c[default] of Zone time.</text></string>
 
-<string id="enc_amk_recipt_souls_cristal_text"><text>\n \nHyper-modificate "Soul Droplet" which is effective against radiation and improves health, is produced from the \n%c[green]"Fiery Soul"%c[default] meso-modificate,\nby transmuting it in a %c[UI_orange]"Burner"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour and 30 minutes%c[default] of Zone time.</text></string>
+<string id="enc_amk_recipt_souls_cristal_text"><text>\n \nHyper-modificate "Crystal Soul" which is effective against radiation and improves health, is produced from the \n%c[green]"Fiery Soul"%c[default] meso-modificate,\nby transmuting it in a %c[UI_orange]"Burner"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour and 30 minutes%c[default] of Zone time.</text></string>
     
 <string id="enc_amk_recipt_tears_electra_text"><text>\n \nModificate "Electra's Tears" which improves stamina is produced from the \n%c[green]"Moonlight"%c[default] artifact, fully positive,\nby transmuting it in an %c[UI_orange]"Electra"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour%c[default] of Zone time.</text></string>
 
@@ -154,7 +154,7 @@
 
 <string id="enc_amk_recipt_burer_grandmother_glassbeards_text"><text>\n \nHyper-modificate "Burer's Grandmother's Beads" which is effective against bullets and improves carried weight, is produced from the \n%c[green]"Great Grandmother's Beads"%c[default] meso-modificate\nby transmuting it in a %c[UI_orange]"Whirlgig"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour and 30 minutes%c[default] of Zone time.</text></string>
 
-<string id="enc_amk_recipt_burer_pra_grandmother_glassbeards_text"><text>\n \nHyper-modificate "Burer's Grandmother's Beads" which is effective against bullets and improves carried weight, is produced from the \n%c[green]"Great Grandmother's Beads"%c[default] meso-modificate\nby transmuting it in a %c[UI_orange]"Whirlgig"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour and 30 minutes%c[default] of Zone time.</text></string>
+<string id="enc_amk_recipt_burer_pra_grandmother_glassbeards_text"><text>\n \nAbsolute "Great Burer's Grandmother's Beads" which is effective against bullets and improves carried weight, is produced from the \n%c[green]"Great Grandmother's Beads"%c[default] hyper-modificate\nby transmuting it in a %c[UI_orange]"Burner"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour and 30 minutes%c[default] of Zone time.</text></string>
 
 <string id="enc_amk_recipt_giant_small_brother_text"><text>\n \nAbsolute "Giant's Younger Brother" which is effective against cuts, bruises, and radiation, is produced from the \n%c[green]"Diamond Kolobok"%c[default] hyper-modificate\nby transmuting it in a %c[UI_orange]"Burner"%c[default] anomaly.\n \nTransmutation is completed in %c[green]one hour and a half%c[default] of Zone time.</text></string>
 
@@ -162,7 +162,7 @@
 
 <string id="enc_amk_recipt_cheshya_text"><text>\n \nMeso-modificate "Scales" which restores psy-health and is effective against telepathy and chemical burns, is produced from the \n%c[green]"Hide"%c[default] artifact\nby transmuting it in a %c[UI_orange]"Whirlgig"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour%c[default] of Zone time.</text></string>
 
-<string id="enc_amk_recipt_pancir_text"><text>\n \nHyper-modificate "Shell" which restores psy-health and is effective against telepathy, bleeding, and chemical burns, is produced from the \n%c[green]"Scales"%c[default] artifact\nby transmuting it in a %c[UI_orange]"Fruit Punch"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour%c[default] of Zone time.</text></string>
+<string id="enc_amk_recipt_pancir_text"><text>\n \nHyper-modificate "Armor" which restores psy-health and is effective against telepathy, bleeding, and chemical burns, is produced from the \n%c[green]"Scales"%c[default] artifact\nby transmuting it in a %c[UI_orange]"Fruit Punch"%c[default] anomaly.\n \nTransmutation is completed in %c[green]1 hour%c[default] of Zone time.</text></string>
 
 <string id="enc_amk_recipt_simbion_text"><text>\n \nUnique modificate "Simbion" which is effective against telepathy and improves health, is produced from 4 artifacts:\n \n• %c[red]fully negative%c[default] "Jellyfish"\n• %c[red]fully negative%c[default] "Thorn"\n• %c[green]fully positive%c[default] "Stone Blood"\n• %c[green]fully positive%c[default] "Droplet"\nby transmuting it in the %c[UI_orange]"Fruit Punch"%c[default] anomaly.\n \nTransmutation is completed in %c[green]5-10min%c[default] of Zone time. In some cases, the transmutation can take up to %c[green]4 hours%c[default].</text></string>
 
