@@ -1,7 +1,7 @@
 # NLC-7-Build-3.0-English-Translation
 An english translation of NLC 7 Build 3.0. This repository will be periodically updated to include files, which have been fully translated.
 
-Credits: Kazemeka, tactical spaghet A.K.A. Adrian Jade, Unrealrus, Redshift, Osteos, Terry 'Sotov' Tuna, Igor "Comrade Cat" Koskin, Sasha Red
+Credits: Kazemeka, tactical spaghet A.K.A. Adrian Jade, Unrealrus, Redshift, Osteos, Terry 'Sotov' Tuna, Igor "Comrade Cat" Koskin, avad, Sasha Red
 
 
  File list                           Status
